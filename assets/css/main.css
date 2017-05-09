@@ -1,0 +1,95 @@
+body{
+  background-image: url('../../assets/imgs/background.jpg');
+  font-family: 'Taviraj', serif;
+}
+
+.preto-transparente{
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+}
+
+/*
+| Navbar
+*/
+.navbar{
+  margin-top: 10px;
+  font-size: 150%;
+  color: white;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+/*
+| Carousel
+*/
+.carousel-indicators{
+  top: 10px;
+  left: 40px;
+}
+
+.carousel-caption{
+  top: 50px;
+  transform: translateX(-20%);
+  text-align: left;
+}
+
+/*
+| Page Header
+*/
+.page-header{
+  margin: 0px;
+  margin-bottom: 40px;
+  padding-bottom: 0px;
+}
+
+/*
+| Row
+*/
+.panel .row{
+  margin-bottom: 40px;
+  padding-bottom: 10px
+}
+/*
+| Custom
+*/
+.texto-enfase{
+  font-size: 1.3em;
+}
+
+.panel-padding{
+  padding: 0 10px;
+}
+
+.btn-eg{
+  font-size: 24px;
+  padding: 15px;
+}
+.footer{
+  width: 100%;
+  padding-top: 10px;
+  background-color: #000;
+  color: white;
+  bottom: 0;
+  position: fixed;
+}
+
+.footer-logo{
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 30px;
+  max-width: 5%;
+  height: auto;
+}
+
+.panel p {
+  font-size: 1.2em;
+}
