@@ -93,3 +93,7 @@ body{
 .panel p {
   font-size: 1.2em;
 }
+
+.info-group .small{
+  font-size: 0.7em;
+}
