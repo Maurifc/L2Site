@@ -37,10 +37,10 @@
       <div class="collapse navbar-collapse" id="nav1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Cadastro</a></li>
-          <li><a href="#">Informações</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">Doações</a></li>
+          <li><a href="/index.php?r=cadastro">Cadastro</a></li>
+          <li><a href="/index.php?r=info">Informações</a></li>
+          <li><a href="/index.php?r=downloads">Downloads</a></li>
+          <li><a href="/index.php?r=doacoes">Doações</a></li>
           <li class="hidden-sm"><a href="#">Fórum</a></li>
         </ul>
       </div>

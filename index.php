@@ -1,18 +1,25 @@
 <?php
 //Imports
-require_once('libs/view.class.php');
+require_once('app/controllers/Site.php');
 
-$rota = isset($_GET['r']) ? $_GET['r'] : 'home';
+$rota = isset($_GET['r']) ? $_GET['r'] : null;
 $action = isset($_GET['a']) ? $_GET['a'] : null;
 
-//instancia o renderizador de views
-$view = new View();
 switch ($rota) {
-  case 'home':
-    $view->mostrar('home');
+  case 'cadastro':
+    Site::cadastro();
+    break;
+  case 'info':
+    Site::info();
+    break;
+  case 'downloads':
+    Site::downloads();
+    break;
+  case 'doacoes':
+    Site::doacoes();
     break;
 
   default:
-    # code...
+    Site::home(); //Exibe a home se nenhum rota for informada
     break;
 }

@@ -15,7 +15,7 @@
           <div class="item active">
             <img src="../../assets/imgs/home_carousel/img_01.png" alt="img">
             <div class="carousel-caption">
-              <h1>Titulo</h1>
+              <h1>Título</h1>
               <p>Texto texto texto texto texto</p>
             </div>
           </div>
