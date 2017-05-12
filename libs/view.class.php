@@ -17,7 +17,6 @@ class View
     $template = new Template(self::PASTA_VIEWS.self::LAYOUT_PADRAO,
                               self::PASTA_VIEWS.$viewInterna);
 
-
     if($arrayVariaveis !== null){
       foreach ($arrayVariaveis as $key => $value) {
         $template->setAllValues($arrayVariaveis);

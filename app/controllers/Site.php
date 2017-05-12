@@ -1,28 +1,52 @@
 <?php
 require_once('libs/view.class.php');
+require_once('config.php');
 
 class Site{
 
   //Exibe a página Home
-  public static function home(){
+  public function home(){
+    $dados = [
+      'titulo' => Config::get('titulo_site'),
+      'aba' => 'home'
+    ];
+
     View::getInstance()->mostrar('home', $dados);
   }
 
   //Exibe a página Cadastro
-  public static function cadastro(){
-    View::getInstance()->mostrar('form_cadastro');
+  public function cadastro(){
+    $dados = [
+      'titulo' => 'Cadastre-se',
+      'aba' => 'cadastro'
+    ];
+
+    View::getInstance()->mostrar('form_cadastro', $dados);
   }
-  
+
   //Exibe a página Informações
-  public static function info(){
-    View::getInstance()->mostrar('info');
+  public function info(){
+    $dados = [
+      'titulo' => 'Informações',
+      'aba' => 'cadastro'
+    ];
+
+    View::getInstance()->mostrar('info', $dados);
   }
   //Exibe a página Downloads
-  public static function downloads(){
-    View::getInstance()->mostrar('downloads');
+  public function downloads(){
+    $dados = [
+      'titulo' => 'Downloads',
+      'aba' => 'cadastro'
+    ];
+    View::getInstance()->mostrar('downloads', $dados);
   }
   //Exibe a página Doações
-  public static function doacoes(){
-    View::getInstance()->mostrar('doacoes');
+  public function doacoes(){
+    $dados = [
+      'titulo' => 'Doações',
+      'aba' => 'cadastro'
+    ];
+    View::getInstance()->mostrar('doacoes', $dados);
   }
 }

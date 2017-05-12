@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>L2Site</title>
+  <title>[@titulo]</title>
 
   <!-- CSS -->
   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -25,18 +25,21 @@
     <nav class="navbar navbar-inverse preto-transparente">
       <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                      data-target="#nav1" aria-expanded="false">
+
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand col-xs-show" href="#">L2Site</a>
+        <a class="navbar-brand visible-xs" href="#">[@titulo]</a>
       </div>
 
       <div class="collapse navbar-collapse" id="nav1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="/index.php?r=home">Home
+                    <span class="sr-only">(current)</span></a></li>
           <li><a href="/index.php?r=cadastro">Cadastro</a></li>
           <li><a href="/index.php?r=info">Informações</a></li>
           <li><a href="/index.php?r=downloads">Downloads</a></li>
