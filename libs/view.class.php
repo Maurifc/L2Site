@@ -3,27 +3,17 @@
 /**
  * Carrega as views para exibição
  */
-include('template.class.php');
-
 class View
 {
   private static $instance;
-  const LAYOUT_PADRAO = 'layouts/app.tpl.php';
   const PASTA_VIEWS = 'app/views/';
 
   //Renderiza a view passada por parametro
-  public function mostrar($viewInterna, $arrayVariaveis = null){
-    //Cria a view, já atribuindo o layout padrão
-    $template = new Template(self::PASTA_VIEWS.self::LAYOUT_PADRAO,
-                              self::PASTA_VIEWS.$viewInterna);
+  public function mostrar($viewInterna, $dados){
+    $caminhoLayoutPadrao = self::PASTA_VIEWS.Config::get('layout_padrao');
+    $caminhoViewInterna = self::PASTA_VIEWS.$viewInterna.'.tpl.php';
 
-    if($arrayVariaveis !== null){
-      foreach ($arrayVariaveis as $key => $value) {
-        $template->setAllValues($arrayVariaveis);
-      }
-    }
-
-    echo $template->output();
+    include($caminhoLayoutPadrao);
   }
 
   public static function getInstance(){

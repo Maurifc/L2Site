@@ -28,7 +28,7 @@ class Site{
   public function info(){
     $dados = [
       'titulo' => 'Informações',
-      'aba' => 'cadastro'
+      'aba' => 'info'
     ];
 
     View::getInstance()->mostrar('info', $dados);
@@ -37,16 +37,18 @@ class Site{
   public function downloads(){
     $dados = [
       'titulo' => 'Downloads',
-      'aba' => 'cadastro'
+      'aba' => 'downloads'
     ];
     View::getInstance()->mostrar('downloads', $dados);
   }
+
   //Exibe a página Doações
   public function doacoes(){
     $dados = [
       'titulo' => 'Doações',
-      'aba' => 'cadastro'
+      'aba' => 'doacoes'
     ];
+
     View::getInstance()->mostrar('doacoes', $dados);
   }
 }

@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[@titulo]</title>
+  <title><?=$dados['titulo']?></title>
 
   <!-- CSS -->
   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Taviraj:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
   <link href="../../assets/css/main.css" rel="stylesheet">
 </head>
 <body>
@@ -38,12 +39,16 @@
 
       <div class="collapse navbar-collapse" id="nav1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/index.php?r=home">Home
-                    <span class="sr-only">(current)</span></a></li>
-          <li><a href="/index.php?r=cadastro">Cadastro</a></li>
-          <li><a href="/index.php?r=info">Informações</a></li>
-          <li><a href="/index.php?r=downloads">Downloads</a></li>
-          <li><a href="/index.php?r=doacoes">Doações</a></li>
+          <li <?php if($dados['aba'] === 'home') echo 'class="active"' ?>>
+                  <a href="/index.php?r=home">Home</a></li>
+          <li <?php if($dados['aba'] === 'cadastro') echo 'class="active"' ?>>
+            <a href="/index.php?r=cadastro">Cadastro</a></li>
+          <li <?php if($dados['aba'] === 'info') echo 'class="active"' ?>>
+            <a href="/index.php?r=info">Informações</a></li>
+          <li <?php if($dados['aba'] === 'downloads') echo 'class="active"' ?>>
+            <a href="/index.php?r=downloads">Downloads</a></li>
+          <li <?php if($dados['aba'] === 'doacoes') echo 'class="active"' ?>>
+            <a href="/index.php?r=doacoes">Doações</a></li>
           <li class="hidden-sm"><a href="#">Fórum</a></li>
         </ul>
       </div>
@@ -54,7 +59,7 @@
     <!-- Conteúdo -->
     <div class="panel panel-default preto-transparente">
       <div class="panel-body">
-        [@conteudo]
+        <?php include($caminhoViewInterna) ?>
       </div>
     </div>
     <!-- /.Conteúdo -->

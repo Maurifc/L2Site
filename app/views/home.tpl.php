@@ -43,8 +43,12 @@
       <div class="page-header">
         <h3>Encontre-nos nas redes sociais</h3>
       </div>
-      <p>Facebook: <a href="#">facebook.com/l2Site</a></p>
-      <p>Twitter: <a href="#">@l2Site</a></p>
+      <p><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+          <a href="#">facebook.com/l2Site</a>
+      </p>
+      <p><i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+        <a href="#">@l2Site</a>
+      </p>
     </div>
     <!-- /.Redes sociais -->
 

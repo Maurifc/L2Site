@@ -7,7 +7,7 @@ $action = isset($_GET['a']) ? $_GET['a'] : null;
 
 /*
 | Instancia um controller Site, responsável por
-| carregas as páginas principais do site
+| carregar as páginas principais do site
 */
 $site = new Site();
 switch ($rota) {

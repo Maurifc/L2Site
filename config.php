@@ -4,7 +4,11 @@
 */
 class Config{
   private static $configs = [
-    'titulo_site' => 'Título do site'
+    //Básico
+    'titulo_site' => 'Título do site',
+
+    //Outros
+    'layout_padrao' => 'layouts/app.tpl.php'
   ];
 
   public static function get($key){
