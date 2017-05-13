@@ -1,3 +1,7 @@
+body, html{
+  height: 100%;
+}
+
 body{
   background-image: url('../../assets/imgs/background.jpg');
   font-family: 'Taviraj', serif;
@@ -6,6 +10,7 @@ body{
 th{
   font-size: 1.2em;
 }
+
 .preto-transparente{
   background: rgba(0, 0, 0, 0.4);
   color: white;
@@ -47,6 +52,7 @@ th{
 .navbar-inverse .navbar-nav>li>a:visited{
   background: rgb(255, 166, 77);
 }
+
 /*
 | Carousel
 */
@@ -77,6 +83,7 @@ th{
   margin-bottom: 40px;
   padding-bottom: 10px
 }
+
 /*
 | Table
 */
@@ -91,6 +98,7 @@ th{
   background-color: rgba(255, 153, 51, 0.2);
   transition: background-color 0.3s;
 }
+
 /*
 | Custom
 */
@@ -135,16 +143,17 @@ th{
 .btn-primario:active{
   background-color: #ff8c21;
 }
+.wraper-geral{
+  min-height:100%;
+  position:relative;
+}
 
 .footer{
   width: 100%;
-  padding-top: 10px;
+  padding: 10px;
   background-color: #000;
   color: white;
-}
-
-.footer-fixed{
-  position: fixed;
+  position: absolute;
   bottom: 0;
 }
 

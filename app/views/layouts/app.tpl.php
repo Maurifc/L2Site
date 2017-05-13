@@ -13,7 +13,7 @@
   <link href="../../assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
+  <div class="container wraper-geral">
     <!-- Logotipo -->
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
@@ -64,10 +64,8 @@
     </div>
     <!-- /.Conteúdo -->
 
-</div> <!-- /.Container -->
-
     <!-- Footer -->
-    <div class="container-fluid footer">
+     <div class="footer">
       <div class="row">
         <div class="col-xs-12 col-sm-6 text-left">
           <img class="footer-logo" src="../../assets/imgs/logo_bootstrap.png">
@@ -83,10 +81,11 @@
           <p>Copyright L2Site - 2017</p>
         </div>
       </div>
-    </div>
+      </div>
+
     <!-- /.Footer -->
 
-
+</div> <!-- /.Container -->
   <!-- JavaScript -->
   <script src="../../assets/js/jquery.min.js"></script>
   <script src="../../assets/js/bootstrap.min.js"></script>

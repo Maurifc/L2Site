@@ -52,6 +52,24 @@
     </div>
     <!-- /.Redes sociais -->
 
+    <!-- Login no Painel  -->
+    <div class="col-xs-12 col-md-4">
+      <div class="page-header">
+        <h3>Painel de controle</h3>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" name="login" placeholder="Login">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Senha">
+        </div>
+        <input class="btn btn-default pull-right"type="submit" name="btnSubmit" value="Login">
+      </form>
+    </div>
+    <!-- /.Login no Painel -->
+
   </div> <!-- Col -->
 </div> <!-- Row -->
 
