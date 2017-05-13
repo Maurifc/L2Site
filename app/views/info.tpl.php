@@ -70,6 +70,6 @@
 </div> <!-- /.Row -->
 <div class="row">
   <div class="col-xs-4 col-xs-offset-4 text-center">
-    <button class="btn btn-eg btn-primario"type="button" name="btFormCadastro">Jogue Agora</button>
+    <a href="/index.php?r=cadastro"class="btn btn-eg btn-primario" name="btFormCadastro">Jogue Agora</a>
   </div>
 </div>

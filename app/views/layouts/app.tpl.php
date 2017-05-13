@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand visible-xs" href="#">[@titulo]</a>
+        <a class="navbar-brand visible-xs" href="#"><?=$dados['titulo']?></a>
       </div>
 
       <div class="collapse navbar-collapse" id="nav1">
@@ -64,28 +64,28 @@
     </div>
     <!-- /.Conteúdo -->
 
-    <!-- Footer -->
+    <!-- Footer
      <div class="footer">
       <div class="row">
-        <div class="col-xs-12 col-sm-6 text-left">
+        <div class="col-xs-12 col-sm-6">
           <img class="footer-logo" src="../../assets/imgs/logo_bootstrap.png">
         </div>
         <div class="col-xs-12 col-sm-6 text-right">
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-6 text-left">
+        <div class="col-sm-6">
           <p>Powered by Bootstrap, MySQL and PHP</p>
         </div>
-        <div class="col-xs-12 col-sm-6 text-right">
+        <div class="col-sm-6 text-right">
           <p>Copyright L2Site - 2017</p>
         </div>
       </div>
       </div>
-
     <!-- /.Footer -->
+  </div> <!-- /.Container -->
 
-</div> <!-- /.Container -->
+
   <!-- JavaScript -->
   <script src="../../assets/js/jquery.min.js"></script>
   <script src="../../assets/js/bootstrap.min.js"></script>

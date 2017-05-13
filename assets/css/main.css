@@ -57,13 +57,16 @@ th{
 | Carousel
 */
 .carousel-indicators{
-  top: 10px;
-  left: 40px;
+  top: 5px;
+  left: 30px;
+  position: absolute;
 }
 
 .carousel-caption{
-  top: 50px;
-  transform: translateX(-20%);
+  text-shadow: 2px 2px 5px #000;
+  position: absolute;
+  top: 5px;
+  left: 10px;
   text-align: left;
 }
 
@@ -79,7 +82,7 @@ th{
 /*
 | Row
 */
-.panel .row{
+.panel .row (:not(.footer)){
   margin-bottom: 40px;
   padding-bottom: 10px
 }
@@ -143,13 +146,15 @@ th{
 .btn-primario:active{
   background-color: #ff8c21;
 }
+/*
 .wraper-geral{
-  min-height:100%;
-  position:relative;
+  position: relative;
+  min-height: 100%;
 }
 
 .footer{
-  width: 100%;
+  margin-top: 100px;
+  height: 70px;
   padding: 10px;
   background-color: #000;
   color: white;
@@ -164,7 +169,7 @@ th{
   max-width: 5%;
   height: auto;
 }
-
+*/
 .panel p {
   font-size: 1.2em;
 }
