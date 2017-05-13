@@ -108,9 +108,11 @@ th{
 .texto-cor-principal{
   color: #ff9933;
 }
+.texto-primario {
+  font-size: 1.5em;
+}
 .info-group > .texto-primario {
   display: block;
-  font-size: 1.5em;
   line-height: 90%;
 }
 

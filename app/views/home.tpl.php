@@ -86,23 +86,31 @@
 
   <!-- Rates -->
   <div class="col-xs-12 col-sm-6">
-    <div class="page-header">
-      <h2>Rates</h2>
-    </div>
-    <div>
-      <div class="col-xs-6 texto-enfase">
-        <p>XP - SP</p>
-        <p>Adena</p>
-        <p>Enchant</p>
-        <p>Buffs</p>
+    <div class="row">
+      <div class="page-header">
+        <h2>Rates</h2>
       </div>
-      <div class="col-xs-6 texto-enfase">
-        <p>100x</p>
-        <p>1000x</p>
-        <p>+3 / +12</p>
-        <p>3 Horas</p>
+        <div class="col-xs-6 text-left texto-primario">
+          <p>XP - SP</p>
+          <p>Adena</p>
+          <p>Enchant</p>
+          <p>Buffs</p>
+        </div>
+        <div class="col-xs-6 text-right texto-cor-principal texto-primario">
+          <p>100x</p>
+          <p>1000x</p>
+          <p>+3 / +12</p>
+          <p>3 Horas</p>
+        </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <a class="btn btn-primario btn-lg" href="/index.php?r=info">
+          Saiba mais
+        </a>
       </div>
     </div>
+
   </div>
   <!-- /.Rates -->
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Carrega as views para exibição
+ * Carrega e monta as views para exibição
  */
 class View
 {
@@ -17,10 +17,10 @@ class View
   }
 
   public static function getInstance(){
-    if($instance === null){
-      $instance = new View();
+    if(self::$instance === null){
+      self::$instance = new View();
     }
 
-    return $instance;
+    return self::$instance;
   }
 }
