@@ -1,0 +1,15 @@
+<?php
+/**
+ * Base class Model
+ * Classe não deve ser usada ou instanciada
+ */
+class Model
+{
+  protected $pdo; //Conexão com a base de dados
+
+  function __construct()
+  {
+    //Reliza a conexão com o banco de dados
+    $this->pdo = DbConnector::getConn();
+  }
+}

@@ -8,27 +8,29 @@
 </div> <!-- /.Row -->
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-    <form class="form form-default" action="#" method="post">
+    <form class="form form-default" action="/index.php?r=account&a=salvarconta" method="post">
       <div class="form-group">
-        <input class="form-control input-lg" type="text" name="txtNomeCompleto" placeholder="nome completo" required>
+        <input class="form-control input-lg" type="text" name="nomeCompleto" placeholder="Nome completo" required>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="text" name="txtLogin" placeholder="login" required>
+        <input class="form-control input-lg" type="text" name="login" placeholder="Login" required>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="email" name="email" placeholder="e-mail" required>
+        <input class="form-control input-lg" type="email" name="email" placeholder="E-mail" required>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg"type="password" name="password" min="6" placeholder="senha" required>
+        <input class="form-control input-lg" type="password" name="senha" min="6" placeholder="Senha" required>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg"type="password" name="repPassword" min="6" placeholder="repetir senha" required>
+        <input class="form-control input-lg" type="password" name="repSenha" min="6" placeholder="Repetir senha" required>
       </div>
 
-      <p><input type="checkbox" name="chbAceito" required>
-        <a href="#">Aceito o contrato de licença</a></p>
+      <p>
+        <input type="checkbox" name="chbAceito" required>
+        <a href="#">Aceito o contrato de licença</a>
+      </p>
 
-        <input class="btn btn-default btn-lg pull-right" type="submit" name="btnSubmit" value="Cadastrar">
+        <input class="btn btn-primario btn-lg pull-right" type="submit" name="btnSubmit" value="Cadastrar">
       </form>
     </div>
   </div> <!-- /.Row -->

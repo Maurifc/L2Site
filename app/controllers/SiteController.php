@@ -1,9 +1,8 @@
 <?php
 require_once('libs/view.class.php');
-require_once('libs/mysqliconnector.class.php');
 require_once('config.php');
 
-class Site{
+class SiteController{
 
   //Exibe a página Home
   public function home(){

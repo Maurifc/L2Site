@@ -82,7 +82,7 @@ th{
 /*
 | Row
 */
-.panel .row (:not(.footer)){
+.row (:not(.footer)){
   margin-bottom: 40px;
   padding-bottom: 10px
 }
