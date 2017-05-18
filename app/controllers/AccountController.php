@@ -1,6 +1,8 @@
 <?php
 require_once('app/models/Account.php');
 require_once('libs/view.class.php');
+require_once('libs/funcoes.php');
+require_once('libs/Auth.class.php');
 
 /**
 * Controller para gerenciamento de Accounts do BD L2j
@@ -44,6 +46,43 @@ class AccountController
       View::getInstance()->mostrar('cadastro_falha', $dados);
     }
 
+  }
+
+  //Loga uma conta para acesso ao painel de controle
+  public function login(){
+    try{
+      //Se não está autenticado, tenta fazer a autenticação
+      if(!Auth::isAutenticado()){
+        $usuario = tString($_POST['login']);
+        $senha = tString($_POST['password']);
+
+        //Verifica se as credenciais são válidas
+        if(!Auth::login($usuario, $senha)){
+          //Mostra o erro de credenciais inválidas em AJAX
+          return false;
+        }
+      }
+
+      //Redireciona para o painel
+      header('Location: index.php?r=painel');
+      return true;
+
+    } catch (Exception $e){
+      //Mostra erro de logon AJAX
+      return false;
+    }
+
+  }
+
+  //Faz logout do usuário do painel de controle
+  public function logout(){
+    Auth::logout();
+
+    //Carrega a página inicial do site
+    $site = new SiteController();
+    header('Location: /index.php?r=home');
+
+    return true;
   }
 
   //Troca senha

@@ -4,8 +4,6 @@
 */
 class Config{
   private static $configs = [
-
-
     //Básico
     'titulo_site' => 'Título do site',
 

@@ -58,7 +58,8 @@
         <h3>Painel de controle</h3>
       </div>
 
-      <form action="#" method="post">
+      <?php if(!Auth::isAutenticado()) {?>
+      <form action="/index.php?r=account&a=login" method="post">
         <div class="form-group">
             <input type="text" class="form-control" name="login" placeholder="Login">
         </div>
@@ -67,6 +68,10 @@
         </div>
         <input class="btn btn-default pull-right"type="submit" name="btnSubmit" value="Login">
       </form>
+      <?php } else {?>
+        <a class="btn btn-primario btn-lg text-center" href="/index.php?r=painel">Acessar</a>
+        <a class="btn btn-primario btn-lg text-center" href="/index.php?r=account&a=logout">Sair</a>
+      <?php } ?>
     </div>
     <!-- /.Login no Painel -->
 
