@@ -50,8 +50,8 @@ switch ($rota) {
     case 'painel':
       $painel = new PainelController();
       switch ($action) {
-        case 'value':
-          # code...
+        case 'alterarSenha':
+          $painel->alterarSenha();
           break;
 
         default:

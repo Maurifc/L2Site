@@ -59,16 +59,17 @@ class AccountController
         //Verifica se as credenciais são válidas
         if(!Auth::login($usuario, $senha)){
           //Mostra o erro de credenciais inválidas em AJAX
-          return false;
+          throw new Exception("Erro no login");
         }
       }
 
-      //Redireciona para o painel
+      //Se está autenticado, redireciona para o painel
       header('Location: index.php?r=painel');
       return true;
 
     } catch (Exception $e){
       //Mostra erro de logon AJAX
+      header('Location: index.php?r=home');
       return false;
     }
 
@@ -84,10 +85,4 @@ class AccountController
 
     return true;
   }
-
-  //Troca senha
-
-  //Loga uma conta
-
-  //Recuperação de uma conta
 }
