@@ -1,4 +1,6 @@
 <?php
+namespace app\models;
+use libs\DbConnector;
 /**
  * Base class Model
  * Classe não deve ser usada ou instanciada

@@ -1,6 +1,8 @@
 <?php
 //Importa as configurações
-require_once('config.php');
+namespace libs;
+use Config;
+use \PDO;
 
 /**
 * Realiza a conexão com o banco MySQL

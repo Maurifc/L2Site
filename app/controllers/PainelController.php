@@ -1,8 +1,11 @@
 <?php
-require_once('app/models/Account.php');
-require_once('libs/view.class.php');
-require_once('libs/DbConnector.class.php');
-require_once('libs/Auth.class.php');
+namespace app\controllers;
+use app\models\Account;
+use libs\View;
+use libs\DbConnector;
+use libs\Auth;
+use libs\Funcoes;
+
 /**
  * Controla as funções do painel de controle
  */
@@ -31,12 +34,12 @@ class PainelController
   public function alterarSenha(){
     try{
       if(Auth::isAutenticado()){
-        $senhaAtual = tString($_POST['senha']);
-        $senhaNova = tString($_POST['nova_senha']);
-        $senhaNovaRep = tString($_POST['rep_nova_senha']); //senha nova repetida
+        $senhaAtual = Funcoes::tString($_POST['senha']);
+        $senhaNova = Funcoes::tString($_POST['nova_senha']);
+        $senhaNovaRep = Funcoes::tString($_POST['rep_nova_senha']); //senha nova repetida
 
         if($senhaNova != $senhaNovaRep){
-          throw new Exception('Senhas não correspondem');
+          throw new \Exception('Senhas não correspondem');
         }
 
         $usuario = $_SESSION['usuario']; //Login do usuário
@@ -46,16 +49,16 @@ class PainelController
 
         //Troca a senha dessa conta
         if(!$acc->trocarSenha($senhaAtual, $senhaNova)){
-          throw new Exception('Senhas atual incorreta');
+          throw new \Exception('Senhas atual incorreta');
         }
 
         //Exibe pop up de sucesso
         $this->exibir(); //Exibe o painel de controle
         return true;
       } else {
-        throw new Exception('Erro ao tentar alterar a senha');
+        throw new \Exception('Erro ao tentar alterar a senha');
       }
-    } catch (Exception $e){
+    } catch (\Exception $e){
       //Exibe popup de erro e redireciona para a home
 
       echo $e;
@@ -93,6 +96,6 @@ class PainelController
 
     $query->bindParam(':login', $login);
     $query->execute();
-    return $query->fetchAll(PDO::FETCH_OBJ);
+    return $query->fetchAll(\PDO::FETCH_OBJ);
   }
 }

@@ -1,4 +1,6 @@
 <?php
+namespace libs;
+use Config;
 
 /**
  * Carrega e monta as views para exibição

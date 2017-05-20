@@ -1,8 +1,9 @@
 <?php
-require_once('app/models/Account.php');
-require_once('libs/view.class.php');
-require_once('libs/funcoes.php');
-require_once('libs/Auth.class.php');
+namespace app\controllers;
+use app\models\Account;
+use libs\View;
+use libs\Funcoes;
+use libs\Auth;
 
 /**
 * Controller para gerenciamento de Accounts do BD L2j
@@ -53,8 +54,8 @@ class AccountController
     try{
       //Se não está autenticado, tenta fazer a autenticação
       if(!Auth::isAutenticado()){
-        $usuario = tString($_POST['login']);
-        $senha = tString($_POST['password']);
+        $usuario = Funcoes::tString($_POST['login']);
+        $senha = Funcoes::tString($_POST['password']);
 
         //Verifica se as credenciais são válidas
         if(!Auth::login($usuario, $senha)){

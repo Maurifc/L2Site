@@ -1,11 +1,22 @@
 <?php
+//Inicia a sessão
+if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+
 //Debug
 ini_set('display_errors', 1);
 
 //Imports
-require_once('app/controllers/SiteController.php');
+require_once('autoload.php');
+use app\controllers\SiteController;
+use app\controllers\AccountController;
+use app\controllers\PainelController;
+
+
+//require_once('app/controllers/SiteController.php');
+/*
 require_once('app/controllers/AccountController.php');
-require_once('app/controllers/PainelController.php');
+require_once('app/controllers/PainelController.php');*/
+
 
 $rota = isset($_GET['r']) ? $_GET['r'] : null;
 $action = isset($_GET['a']) ? $_GET['a'] : null;

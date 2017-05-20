@@ -58,7 +58,7 @@
         <h3>Painel de controle</h3>
       </div>
 
-      <?php if(!Auth::isAutenticado()) {?>
+      <?php if(!libs\Auth::isAutenticado()) {?>
       <form action="/index.php?r=account&a=login" method="post">
         <div class="form-group">
             <input type="text" class="form-control" name="login" placeholder="Login">

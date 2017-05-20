@@ -1,7 +1,9 @@
 <?php
-require_once('libs/DbConnector.class.php');
-require_once('libs/funcoes.php');
-require_once('Model.php');
+namespace app\models;
+use libs\Funcoes;
+use libs\DbConnector;
+use libs\Auth;
+use \PDO;
 
 /**
 * Realiza operações de banco de dados relacionado à entidade Accounts
@@ -22,7 +24,7 @@ class Account extends Model
     $ins = $this->pdo->prepare("INSERT INTO accounts(login, password,
       nome, email) VALUES(:login,:password,:nome,:email)");
     $ins->bindParam(":login", $this->login);
-    $ins->bindParam(":password", criptografar($this->password));
+    $ins->bindParam(":password", Funcoes::criptografar($this->password));
     $ins->bindParam(":nome", $this->nome);
     $ins->bindParam(":email", $this->email);
 
@@ -34,7 +36,7 @@ class Account extends Model
   public function trocarSenha($senhaAtualInformada, $senhaNova){
     //Verifica se a senha atual informa é válida
     if($this->verificarSenhaAtual($senhaAtualInformada)){
-      $novaSenhaCriptografada = criptografar($senhaNova);
+      $novaSenhaCriptografada = Funcoes::criptografar($senhaNova);
 
       $query = $this->pdo->prepare('UPDATE accounts SET password= :novaSenha WHERE login= :login');
       $query->bindParam(':novaSenha', $novaSenhaCriptografada);
@@ -62,7 +64,7 @@ class Account extends Model
   | igual a senha informada no parâmetro
   */
   public function verificarSenhaAtual($senha){
-    $senhaCriptografada = criptografar($senha);
+    $senhaCriptografada = Funcoes::criptografar($senha);
 
     return $this->password == $senhaCriptografada;
   }

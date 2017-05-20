@@ -1,5 +1,6 @@
 <?php
-session_start();
+namespace libs;
+use \PDO;
 /**
  * Classe responsável por efetuar Login e Logoff de usuários
  * No banco de dados MySQL

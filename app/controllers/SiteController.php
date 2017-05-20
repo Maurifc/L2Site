@@ -1,7 +1,8 @@
 <?php
-require_once('libs/view.class.php');
-require_once('libs/Auth.class.php');
-require_once('config.php');
+namespace app\controllers;
+use Config;
+use libs\View;
+use libs\Auth;
 
 class SiteController{
 
