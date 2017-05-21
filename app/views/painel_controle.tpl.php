@@ -12,13 +12,14 @@
       </div>
       <form action="/index.php?r=painel&a=alterarSenha" method="post">
         <div class="form-group">
-          <input class="form-control" type="password" name="senha" placeholder="Senha Atual" required>
+          <input class="form-control" type="password" name="senhaAtual" placeholder="Senha Atual" required>
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" name="nova_senha" placeholder="Nova senha" required>
+          <input class="form-control" type="password" name="senha" placeholder="Nova senha" required>
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" name="rep_nova_senha" placeholder="Repetir nova senha" required>
+          <input class="form-control" type="password" name="repSenha" placeholder="Repetir nova senha" required>
+          <p id="msg-erro-rep-senha" class="text-danger"></p>
         </div>
 
         <input class="btn btn-default pull-right" type="submit" value="Trocar">

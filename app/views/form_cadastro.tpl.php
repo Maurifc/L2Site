@@ -28,23 +28,20 @@
         <p id="msg-erro-rep-senha" class="text-danger"></p>
       </div>
 
-      <p>
-        <input type="checkbox" name="chbAceito" required>
-        <a href="#">Aceito o contrato de licença</a>
-      </p>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="loader">
-
-            <div class="loading"></div>
-            <span class="loading-texto">Validando o campo</span>
-          </div>
-
-          <input class="btn btn-primario btn-lg pull-right" type="submit"
-               name="btnSubmit" value="Cadastrar">
-        </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" required>Estou de acordo com as <a href="#">regras do servidor</a>
+        </label>
       </div>
+      <!-- Loader -->
+      <div class="loader">
+        <div class="loading"></div>
+        <span class="loading-texto">Validando o campo</span>
+      </div>
+      <!-- /.Loader -->
+
+      <input class="btn btn-primario btn-lg pull-right" type="submit"
+      name="btnSubmit" value="Cadastrar">
 
     </form>
     </div>

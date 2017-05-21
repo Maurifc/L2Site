@@ -34,13 +34,13 @@ class PainelController
   public function alterarSenha(){
     try{
       if(Auth::isAutenticado()){
-        $senhaAtual = Funcoes::tString($_POST['senha']);
-        $senhaNova = Funcoes::tString($_POST['nova_senha']);
-        $senhaNovaRep = Funcoes::tString($_POST['rep_nova_senha']); //senha nova repetida
+        $senhaAtual = Funcoes::tString($_POST['senhaAtual']);
+        $senhaNova = Funcoes::tString($_POST['senha']);
 
+/*
         if($senhaNova != $senhaNovaRep){
           throw new \Exception('Senhas não correspondem');
-        }
+        }*/
 
         $usuario = $_SESSION['usuario']; //Login do usuário
 
