@@ -83,11 +83,22 @@
       </div>
       </div>
     <!-- /.Footer -->
+
+
+    <!-- Notificações -->
+    <div id="notificacao" class="alert alert-warning alert-dismissible flutuar-centro" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Atenção!</strong> Better check yourself, you're not looking too good.
+    </div>
+    <!-- /.Notificações -->
+
   </div> <!-- /.Container -->
+
 
 
   <!-- JavaScript -->
   <script src="../../assets/js/jquery.min.js"></script>
   <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ use app\models\Account;
 use libs\View;
 use libs\Funcoes;
 use libs\Auth;
+use \Exception;
 
 /**
 * Controller para gerenciamento de Accounts do BD L2j

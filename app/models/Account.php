@@ -55,8 +55,8 @@ class Account extends Model
     $account = new Account();
 
     //Carrega as informações para esse objeto no banco de dados
-    $account->load($login);
-    return $account;
+    //return $account->load($login);
+    return $account->load($login);
   }
 
   /*
@@ -84,6 +84,6 @@ class Account extends Model
     $this->login = $result->login;
     $this->email = $result->email;
     $this->password = $result->password;
-    return true;
+    return $this;
   }
 }

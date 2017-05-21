@@ -103,6 +103,20 @@ th{
 }
 
 /*
+| Alert - Notificações e erros
+*/
+.container{
+  position: relative;
+}
+
+.flutuar-centro{
+  position: absolute;
+  float: left;
+  left: 20%;
+  top: 2%;
+}
+
+/*
 | Custom
 */
 .texto-cor-principal{

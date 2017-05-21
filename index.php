@@ -10,13 +10,7 @@ require_once('autoload.php');
 use app\controllers\SiteController;
 use app\controllers\AccountController;
 use app\controllers\PainelController;
-
-
-//require_once('app/controllers/SiteController.php');
-/*
-require_once('app/controllers/AccountController.php');
-require_once('app/controllers/PainelController.php');*/
-
+use app\controllers\ValidacaoController;
 
 $rota = isset($_GET['r']) ? $_GET['r'] : null;
 $action = isset($_GET['a']) ? $_GET['a'] : null;
@@ -70,6 +64,12 @@ switch ($rota) {
           break;
       }
     break;
+
+    //Rota de validação de formulários
+    case 'validacao':
+      $validacao = new ValidacaoController();
+      $validacao->testar($_GET['campo'], $_GET['valor']);
+      break;
 
   default:
     $site->home(); //Exibe a home se nenhum rota for informada
