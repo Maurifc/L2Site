@@ -33,8 +33,20 @@
         <a href="#">Aceito o contrato de licença</a>
       </p>
 
-        <input class="btn btn-primario btn-lg pull-right" type="submit" name="btnSubmit" value="Cadastrar">
-      </form>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="loader">
+
+            <div class="loading"></div>
+            <span class="loading-texto">Validando o campo</span>
+          </div>
+
+          <input class="btn btn-primario btn-lg pull-right" type="submit"
+               name="btnSubmit" value="Cadastrar">
+        </div>
+      </div>
+
+    </form>
     </div>
   </div> <!-- /.Row -->
   <!-- /.Form Cadastro -->

@@ -86,4 +86,16 @@ class Account extends Model
     $this->password = $result->password;
     return $this;
   }
+
+  /*
+  | Validações
+  */
+  public function emailExiste($email){
+    $pdo = DbConnector::getConn();
+    $query = $pdo->prepare("SELECT login FROM accounts WHERE email=:email");
+    $query->bindParam(':email', $email);
+    $query->execute();
+
+    return ($query->rowCount() == 1) ? true : false;
+  }
 }

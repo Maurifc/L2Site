@@ -1,43 +1,50 @@
 $(document).ready(function(){
   /*
-  | Validações dos campos de cadastro
+  | Eventos de validação dos campos de cadastro
   */
-
-  //$("#campo-login").focusout(validar('login', ));
-
+  //Campo login e email tem o evento setado diretamente no input
+  //Campo de senha e repetir senha
   $('[name=senha]').on("input", validarSenha);
   $('[name=repSenha]').on("input", validarSenha);
-/*
-  $('[name=senha]').on("input", function(){ validarSenha($(this),
-              $('[name=repSenha]'), $('#msg-erro-rep-senha')); });*/
+
+  //Esconde o loader presente nos formulários
+  $('.loader').hide();
 
 
 }); //Document ready
 
-function validar2(componente, id){
-  console.log(componente.name);
-}
-
+/*Faz a verificação dos campos login ou email, enviando um requisição ajax
+| ao servidor e exibindo erro ou não conforme a resposta
+*/
 function validar(inputText, idMsgErro){
   var nomeCampo = inputText.name;
   var conteudoInput = inputText.value;
-  $.ajax(
-    {
-      url: "index.php?r=validacao&campo="+nomeCampo+"&valor=" + conteudoInput,
-      success: function(result){
-        //Se deu erro na validação...
-        if(result[1] == 'erro'){
-          //Escreve a mensagem e a exibe
-          idMsgErro.text('*' + result[0]);
-          idMsgErro.show();
-        } else {
-          //Se a validação der certo, oculta possível mensagem de erro
-          idMsgErro.hide();
-        }
 
-      },
-      dataType: "json"
-    });
+  //Verifica se há algum conteúdo no campo antes de tentar validar
+  if(conteudoInput != ""){
+    //Inicia a animação de loading enquanto não recebe a resposta do servidor
+    iniciarLoader();
+
+    $.ajax(
+      {
+        url: "index.php?r=validacao&campo="+nomeCampo+"&valor=" + conteudoInput,
+        success: function(result){
+          //Se deu erro na validação...
+          if(result[1] == 'erro'){
+            //Escreve a mensagem e a exibe
+            idMsgErro.text('*' + result[0]);
+            idMsgErro.show();
+          } else {
+            //Se a validação der certo, oculta possível mensagem de erro
+            idMsgErro.hide();
+          }
+
+          //Para a animação de loading depois de mostrar a resposta
+          pararLoader();
+        },
+        dataType: "json"
+      });
+  }
 }
 
 //Verifica se as senhas do formulário são iguais (confirmação de senha);
@@ -52,12 +59,14 @@ function validarSenha(){
   } else {
     msgErro.hide();
   }
-}/*
-function validarSenha(senha, senhaRepetida, idMsgErro){
-  if(senha.val() != senhaRepetida.val()){
-    idMsgErro.text('* ' + 'As senhas digitadas não correspondem');
-    idMsgErro.show();
-  } else {
-    idMsgErro.hide();
-  }
-}*/
+}
+
+//Exibe o loader (Animação de carregando)
+function iniciarLoader(){
+  $('.loader').show();
+}
+
+//Esconde o loader (Animação de carregando)
+function pararLoader(){
+  $('.loader').hide();
+}

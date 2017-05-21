@@ -15,18 +15,21 @@ class ValidacaoController
   |Recebe um campo por parâmetro e retorna true caso seja válido.
   */
   public function testar($campo, $valor){
-    header("Content-Type: application/json; charset=utf-8");
+    //Aguarda 2s para evitar flood na checkagem
+    sleep(2);
 
     //Tratamento de strings
     $campo = Funcoes::tString($campo);
     $valor = Funcoes::tString($valor);
-    //error_log($valor, 0);
+
     //Verificamos qual campo foi passado por parâmetro
     switch ($campo) {
       case 'login':
         $this->testarLogin($valor);
         break;
 
+      case 'email':
+        $this->testarEmail($valor);
       default:
         return false;
         break;
@@ -39,7 +42,6 @@ class ValidacaoController
   */
   public function testarLogin($login){
     if(Account::get($login)){
-    //if(false){
       $resposta = array(
         "Login informado já existe!",
         "erro");
@@ -51,5 +53,25 @@ class ValidacaoController
     }
 
   echo json_encode($resposta);
+  }
+
+  /*
+  | Verifica se o email informado já existe no banco de dados.
+  | O email não pode ser duplicado.
+  */
+  public function testarEmail($email){
+    if(Account::emailExiste($email)){
+      $resposta = array(
+        "Email informado já está em uso.",
+        "erro"
+      );
+    } else {
+      $resposta = array(
+        "",
+        "ok"
+      );
+    }
+
+    echo json_encode($resposta);
   }
 }
