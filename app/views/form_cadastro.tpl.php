@@ -41,7 +41,7 @@
       <!-- /.Loader -->
 
       <input class="btn btn-primario btn-lg pull-right" type="submit"
-      name="btnSubmit" value="Cadastrar">
+      id="submitCadastro" value="Cadastrar">
 
     </form>
     </div>

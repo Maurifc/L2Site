@@ -10,10 +10,10 @@ $(document).ready(function(){
   //Esconde o loader presente nos formulários
   $('.loader').hide();
 
-
 }); //Document ready
 
-/*Faz a verificação dos campos login ou email, enviando um requisição ajax
+/*
+| Faz a verificação dos campos login ou email, enviando um requisição ajax
 | ao servidor e exibindo erro ou não conforme a resposta
 */
 function validar(inputText, idMsgErro){
@@ -31,6 +31,8 @@ function validar(inputText, idMsgErro){
         success: function(result){
           //Se deu erro na validação...
           if(result[1] == 'erro'){
+            //Sinaliza que ocorreu erro na validação
+            validacaoErro(nomeCampo);
 
             //Escreve a mensagem e a exibe
             idMsgErro.text('*' + result[0]);
@@ -38,6 +40,9 @@ function validar(inputText, idMsgErro){
           } else {
             //Se a validação der certo, oculta possível mensagem de erro
             idMsgErro.hide();
+
+            //Sinaliza o sucesso da validação
+            validacaoOk(nomeCampo);
           }
 
           //Para a animação de loading depois de mostrar a resposta
@@ -57,8 +62,43 @@ function validarSenha(){
   if(campoRepetirSenha.val() != "" && campoSenha.val() != campoRepetirSenha.val()){
     msgErro.text('* ' + 'As senhas digitadas não correspondem');
     msgErro.show();
+    //Sinaliza que ocorreu erro na validação
+    validacaoErro('senha');
   } else {
     msgErro.hide();
+    //Sinaliza o sucesso da validação
+    validacaoOk('senha');
+  }
+}
+
+/*
+| Funções para controle do botão submit (Cadastro)
+*/
+var flagValidacao = {
+              'login': false,
+              'email': false,
+              'senha': false
+            };
+
+function validacaoOk(campo){
+  flagValidacao[campo] = true;
+
+  if(flagValidacao['login'] == true &&
+      flagValidacao['email'] == true &&
+      flagValidacao['senha'] == true)
+  {
+    $('#submitCadastro').attr('disabled', false);
+  }
+}
+
+function validacaoErro(campo){
+  flagValidacao[campo] = false;
+
+  if(flagValidacao['login'] == false ||
+      flagValidacao['email'] == false ||
+      flagValidacao['senha'] == false)
+  {
+    $('#submitCadastro').attr('disabled', true);
   }
 }
 
