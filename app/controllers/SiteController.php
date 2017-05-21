@@ -8,9 +8,16 @@ class SiteController{
 
   //Exibe a página Home
   public function home(){
+    /*
+    | A variável 'a' é setada quando o usuário entra com a senha
+    | incorreta ao tentar se logar
+    */
+    $erro_login = (isset($_GET['a'])) ? true : false;
+
     $dados = [
       'titulo' => Config::get('titulo_site'),
-      'aba' => 'home'
+      'aba' => 'home',
+      'erro_login' => $erro_login
     ];
 
     View::getInstance()->mostrar('home', $dados);

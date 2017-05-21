@@ -12,14 +12,11 @@ use \Exception;
 */
 class AccountController
 {
-
-  //Valida o form
-
   //Cria conta
   public function salvarConta(){
-    try{
-      //validar os campos
+    sleep(2);
 
+    try{
       //Cria um objeto conta e seta os atributos
       $conta = new Account();
       $conta->nome = $_POST['nomeCompleto'] ;
@@ -52,6 +49,9 @@ class AccountController
 
   //Loga uma conta para acesso ao painel de controle
   public function login(){
+    //Prevenindo ataques de bruteforce
+    sleep(2);
+
     try{
       //Se não está autenticado, tenta fazer a autenticação
       if(!Auth::isAutenticado()){
@@ -70,8 +70,7 @@ class AccountController
       return true;
 
     } catch (Exception $e){
-      //Mostra erro de logon AJAX
-      header('Location: index.php?r=home');
+      header('Location: index.php?r=home&a=erroLogin');
       return false;
     }
 

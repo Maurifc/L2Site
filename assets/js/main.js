@@ -31,6 +31,7 @@ function validar(inputText, idMsgErro){
         success: function(result){
           //Se deu erro na validação...
           if(result[1] == 'erro'){
+
             //Escreve a mensagem e a exibe
             idMsgErro.text('*' + result[0]);
             idMsgErro.show();
