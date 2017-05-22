@@ -25,11 +25,16 @@ class SiteController{
 
   //Exibe a página Cadastro
   public function cadastro(){
+    /*
+    | A variável 'a' é setada quando ocrre algum erro criar a conta
+    */
+    $erro = (isset($_GET['a'])) ? true : false;
     $dados = [
       'titulo' => 'Cadastre-se',
-      'aba' => 'cadastro'
+      'aba' => 'cadastro',
+      'erro' => $erro
     ];
-
+    var_dump($erro);
     View::getInstance()->mostrar('form_cadastro', $dados);
   }
 

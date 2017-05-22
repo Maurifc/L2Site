@@ -21,7 +21,7 @@ class AccountController
       $conta = new Account();
       $conta->nome = $_POST['nomeCompleto'] ;
       $conta->login = $_POST['login'] ;
-      $conta->email = $_POST['email'];
+      $conta->email = 'asda@asda.com';
       $conta->password = $_POST['senha'];
 
       //Salva a conta no banco de dados
@@ -37,12 +37,7 @@ class AccountController
       View::getInstance()->mostrar('cadastro_sucesso', $dados);
     } catch (Exception $e){
       //Mostra mensagem de falha
-      $dados = [
-        'titulo' => 'Falha no cadastro',
-        'aba' => 'cadastro',
-      ];
-
-      View::getInstance()->mostrar('cadastro_falha', $dados);
+      header("Location: /index.php?r=cadastro&a=erro");
     }
 
   }

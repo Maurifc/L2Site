@@ -15,14 +15,14 @@
           <input class="form-control" type="password" name="senhaAtual" placeholder="Senha Atual" required>
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" name="senha" placeholder="Nova senha" required>
+          <input class="form-control" type="password" name="senha" placeholder="Nova senha" oninput="validarSenha('painel')"  required>
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" name="repSenha" placeholder="Repetir nova senha" required>
+          <input class="form-control" type="password" name="repSenha" placeholder="Repetir nova senha" oninput="validarSenha('painel')" required>
           <p id="msg-erro-rep-senha" class="text-danger"></p>
         </div>
 
-        <input class="btn btn-default pull-right" type="submit" value="Trocar">
+        <input class="btn btn-default pull-right" type="submit" value="Trocar" disabled>
       </form>
     </div>
     <div class="col-xs-12 col-sm-4">

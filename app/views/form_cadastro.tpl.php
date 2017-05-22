@@ -17,14 +17,14 @@
         <p id="msg-erro-login" class="text-danger"></p>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="email" name="email" placeholder="E-mail"  onfocusout="validar(this, $('#msg-erro-email'))" required>
+        <input class="form-control input-lg" type="email" name="email" placeholder="E-mail" onfocusout="validar(this, $('#msg-erro-email'))" required>
         <p id="msg-erro-email" class="text-danger"></p>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="password" name="senha" min="6" placeholder="Senha" required>
+        <input class="form-control input-lg" type="password" name="senha" min="6" placeholder="Senha" oninput="validarSenha('cadastro')" required>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="password" name="repSenha" min="6" placeholder="Repetir senha" required>
+        <input class="form-control input-lg" type="password" name="repSenha" min="6" placeholder="Repetir senha" oninput="validarSenha('cadastro')" required>
         <p id="msg-erro-rep-senha" class="text-danger"></p>
       </div>
 
@@ -33,6 +33,11 @@
           <input type="checkbox" required>Estou de acordo com as <a href="#">regras do servidor</a>
         </label>
       </div>
+      <?php if(isset($dados['erro']) && $dados['erro'] === true) { ?>
+        <p class="text-danger" style="font-size: 1.3em">*Erro ao
+           criar a conta. Verifique os campos digitados e tente   novamente!
+        </p>
+      <?php } ?>
       <!-- Loader -->
       <div class="loader">
         <div class="loading"></div>

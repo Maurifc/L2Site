@@ -1,13 +1,5 @@
 $(document).ready(function(){
-  /*
-  | Eventos de validação dos campos de cadastro
-  */
-  //Campo login e email tem o evento setado diretamente no input
-  //Campo de senha e repetir senha
-  $('[name=senha]').on("input", validarSenha);
-  $('[name=repSenha]').on("input", validarSenha);
-
-  //Esconde o loader presente nos formulários
+  //Esconde o loader presente nos formulários cadastro e troca de senha
   $('.loader').hide();
 
 }); //Document ready
@@ -54,7 +46,7 @@ function validar(inputText, idMsgErro){
 }
 
 //Verifica se as senhas do formulário são iguais (confirmação de senha);
-function validarSenha(){
+function validarSenha(form){
   var campoSenha = $('[name=senha]');
   var campoRepetirSenha = $('[name=repSenha]');
   var msgErro = $('#msg-erro-rep-senha');
@@ -62,17 +54,26 @@ function validarSenha(){
   if(campoRepetirSenha.val() != "" && campoSenha.val() != campoRepetirSenha.val()){
     msgErro.text('* ' + 'As senhas digitadas não correspondem');
     msgErro.show();
+
     //Sinaliza que ocorreu erro na validação
-    validacaoErro('senha');
+    if(form == 'cadastro'){
+      validacaoErro('senha');
+    } else if(form == 'painel') {
+      $('[type=submit]').attr('disabled', true);
+    }
   } else {
     msgErro.hide();
     //Sinaliza o sucesso da validação
-    validacaoOk('senha');
+    if(form == 'cadastro'){
+      validacaoOk('senha');
+    } else if(form == 'painel') {
+      $('[type=submit]').attr('disabled', false);
+    }
   }
 }
 
 /*
-| Funções para controle do botão submit (Cadastro)
+| Funções para controle do botão submit (Form de Cadastro)
 */
 var flagValidacao = {
               'login': false,
