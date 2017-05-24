@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 use app\models\Account;
+use app\models\Char;
 use libs\View;
 use libs\DbConnector;
 use libs\Auth;
@@ -15,7 +16,8 @@ class PainelController
   public function exibir(){
     if(Auth::isAutenticado()){
       //Carrega os chars do usuário
-      $chars = $this->getChars(Auth::usuario());
+      $charModel = new Char();
+      $chars = $charModel->getChars(Auth::usuario());
 
       //Exibe o painel depois que o usuário está autenticado
       $dados = [
@@ -67,35 +69,5 @@ class PainelController
     }
   }
 
-  /*
-  | Retorna um array com todos os chars pertencentes ao login dado
-  */
-  private function getChars($login){
 
-    $pdo = DbConnector::getConn();
-
-    $query = $pdo->prepare("SELECT
-                ch.char_name,
-                ch.pvpkills,
-                ch.pkkills,
-                ch.accesslevel,
-                ch.level,
-                  (
-                    SELECT
-                      cl.class_name
-                    FROM
-                      class_list cl
-                    WHERE
-                      cl.id = ch.base_class
-                  ) as classe
-                FROM
-                characters ch
-                WHERE
-                account_name= :login
-    ");
-
-    $query->bindParam(':login', $login);
-    $query->execute();
-    return $query->fetchAll(\PDO::FETCH_OBJ);
-  }
 }

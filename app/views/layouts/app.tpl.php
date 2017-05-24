@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand visible-xs" href="#"><?=$dados['titulo']?></a>
+        <span class="navbar-brand visible-xs" href="#"><?=$dados['titulo']?></span>
       </div>
 
       <div class="collapse navbar-collapse" id="nav1">
