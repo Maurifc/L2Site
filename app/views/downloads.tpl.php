@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="page-header">
-      <h3>Cliente Interlude</h3>
+      <h3 class="texto-cor-principal">Cliente Interlude</h3>
     </div>
 
     <div class="info-group">
@@ -16,7 +16,7 @@
   </div>
   <div class="col-xs-12 col-sm-4">
     <div class="page-header">
-      <h3>Patch</h3>
+      <h3 class="texto-cor-principal">Patch</h3>
     </div>
 
     <div class="info-group">
@@ -31,7 +31,7 @@
   </div>
   <div class="col-xs-12 col-sm-4">
     <div class="page-header">
-      <h3>Utilitários</h3>
+      <h3 class="texto-cor-principal">Utilitários</h3>
     </div>
     <div class="info-group">
       <span class="texto-primario"><a href="#">TeamSpeak</a></span>

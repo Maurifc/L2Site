@@ -11,6 +11,10 @@ th{
   font-size: 1.2em;
 }
 
+.lg-margin-bottom{
+  margin-bottom: 2em;
+}
+
 .preto-transparente{
   background: rgba(0, 0, 0, 0.4);
   color: white;

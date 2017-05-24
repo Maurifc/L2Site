@@ -34,6 +34,10 @@ switch ($rota) {
   case 'doacoes':
     $site->doacoes();
     break;
+    break;
+  case 'regras':
+    $site->regras();
+    break;
 
   //Rotas de Cadastro e Login
   case 'account':

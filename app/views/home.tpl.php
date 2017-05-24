@@ -41,7 +41,7 @@
     <!-- Redes sociais -->
     <div class="col-xs-12 col-sm-4">
       <div class="page-header">
-        <h3>Encontre-nos nas redes sociais</h3>
+        <h3 class="texto-cor-principal">Encontre-nos nas redes sociais</h3>
       </div>
       <p><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
           <a href="#">facebook.com/l2Site</a>
@@ -55,7 +55,7 @@
     <!-- Login no Painel  -->
     <div class="col-xs-12 col-md-4">
       <div class="page-header">
-        <h3>Painel de controle</h3>
+        <h3 class="texto-cor-principal">Painel de controle</h3>
       </div>
 
       <?php if(!libs\Auth::isAutenticado()) {?>
@@ -85,7 +85,7 @@
   <!-- Bem vindo -->
   <div class="col-xs-12 col-sm-6">
     <div class="page-header">
-      <h2>Seja bem vindo</h2>
+      <h2 class="texto-cor-principal">Seja bem vindo</h2>
     </div>
 
     <p>&nbspQuisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.</p>
@@ -96,7 +96,7 @@
   <div class="col-xs-12 col-sm-6">
     <div class="row">
       <div class="page-header">
-        <h2>Rates</h2>
+        <h2 class="texto-cor-principal">Rates</h2>
       </div>
         <div class="col-xs-6 text-left texto-primario">
           <p>XP - SP</p>

@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="page-header">
-      <h2>Cadastro</h2>
+      <h2 class="texto-cor-principal">Cadastro</h2>
     </div>
   </div>
 </div> <!-- /.Row -->
@@ -30,7 +30,7 @@
 
       <div class="checkbox">
         <label>
-          <input type="checkbox" required>Estou de acordo com as <a href="#">regras do servidor</a>
+          <input type="checkbox" required>Estou de acordo com as <a href="/index.php?r=regras" target="_blank">regras do servidor</a>
         </label>
       </div>
       <?php if(isset($dados['erro']) && $dados['erro'] === true) { ?>
@@ -38,6 +38,7 @@
            criar a conta. Verifique os campos digitados e tente   novamente!
         </p>
       <?php } ?>
+
       <!-- Loader -->
       <div class="loader">
         <div class="loading"></div>

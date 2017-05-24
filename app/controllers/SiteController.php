@@ -65,4 +65,13 @@ class SiteController{
 
     View::getInstance()->mostrar('doacoes', $dados);
   }
+
+  //Exibe a página Regras
+  public function regras(){
+    $dados = [
+      'titulo' => 'Regras'
+    ];
+
+    View::getInstance()->mostrar('regras', $dados);
+  }
 }

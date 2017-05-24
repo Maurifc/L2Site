@@ -2,13 +2,13 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="page-header">
-      <h2>Painel de controle <a href="/index.php?r=account&a=logout"><small class="pull-right">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></small></a></h2>
+      <h2 class="texto-cor-principal">Painel de controle <a href="/index.php?r=account&a=logout"><small class="pull-right">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></small></a></h2>
     </div>
     <p>Olá <span class="texto-cor-principal"><?=$_SESSION['usuario'] ?></span>, seja bem vindo ao painel de controle do nosso servidor!</p>
 
     <div class="col-xs-12 col-sm-4">
       <div class="page-header">
-        <h3>Alterar Senha</h3>
+        <h3 class="texto-cor-principal">Alterar Senha</h3>
       </div>
       <form action="/index.php?r=painel&a=alterarSenha" method="post">
         <div class="form-group">
@@ -27,7 +27,7 @@
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="page-header">
-        <h3>
+        <h3 class="texto-cor-principal">
           Meus chars <small><?=count($dados['chars'])?>/7</small>
         </h3>
       </div>

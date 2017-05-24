@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-4">
+<!--<div class="row"> -->
+  <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="page-header">
-      <h3>Rates</h3>
+      <h2 class="texto-cor-principal">Rates</h3>
     </div>
 
     <table class="table table-hover custom-table">
@@ -22,12 +22,20 @@
           <td>Enchant</td>
           <td class="text-right texto-cor-principal">+3 / +12</td>
         </tr>
+        <tr>
+          <td>Normal Enchant</td>
+          <td class="text-right texto-cor-principal">20%</td>
+        </tr>
+        <tr>
+          <td>Blessed Enchant</td>
+          <td class="text-right texto-cor-principal">80%</td>
+        </tr>
       </tbody>
     </table>
   </div>
-  <div class="col-xs-12 col-sm-4">
+  <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="page-header">
-      <h3>Itens</h3>
+      <h2 class="texto-cor-principal">Itens</h3>
     </div>
 
     <div class="info-group">
@@ -43,9 +51,9 @@
       <span class="small">Armas | Sets | Jóias</span>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-4">
+  <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="page-header">
-      <h3>Features</h3>
+      <h2 class="texto-cor-principal">Features</h3>
     </div>
 
     <div class="info-group">
@@ -67,7 +75,7 @@
       <span class="small">Ketra Orc | Varkas | Monastery</span>
     </div>
   </div>
-</div> <!-- /.Row -->
+<!--</div> --> <!-- /.Row -->
 <div class="row">
   <div class="col-xs-4 col-xs-offset-4 text-center">
     <a href="/index.php?r=cadastro"class="btn btn-eg btn-primario">Jogue Agora</a>
