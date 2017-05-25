@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=$dados['titulo']?></title>
-
+  <link rel="icon" type="image/png" href="../../assets/imgs/favicon.ico" />
   <!-- CSS -->
   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Taviraj:400,700" rel="stylesheet">

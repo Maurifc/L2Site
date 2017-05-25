@@ -1,4 +1,8 @@
 <?php
+/*
+| Controller responsável por abrir as principais views do site
+| Home, Cadastro, Informações, Downloads, Doações e Regras
+*/
 namespace app\controllers;
 use Config;
 use libs\View;
@@ -34,7 +38,7 @@ class SiteController{
       'aba' => 'cadastro',
       'erro' => $erro
     ];
-    var_dump($erro);
+    
     View::getInstance()->mostrar('form_cadastro', $dados);
   }
 

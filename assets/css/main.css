@@ -86,7 +86,7 @@ th{
 /*
 | Row
 */
-.row (:not(.footer)){
+.row {
   margin-bottom: 40px;
   padding-bottom: 10px
 }
@@ -107,7 +107,7 @@ th{
 
 /*
 | Alert - Notificações e erros
-*/
+
 .container{
   position: relative;
 }
@@ -117,7 +117,7 @@ th{
   float: left;
   left: 20%;
   top: 2%;
-}
+}*/
 
 /*
 | Custom
