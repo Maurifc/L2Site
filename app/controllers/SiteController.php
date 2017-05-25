@@ -19,7 +19,7 @@ class SiteController{
     $erro_login = (isset($_GET['a'])) ? true : false;
 
     $dados = [
-      'titulo' => Config::get('titulo_site'),
+      'titulo' => 'Home',
       'aba' => 'home',
       'erro_login' => $erro_login
     ];
@@ -34,11 +34,11 @@ class SiteController{
     */
     $erro = (isset($_GET['a'])) ? true : false;
     $dados = [
-      'titulo' => 'Cadastre-se',
+      'titulo' => 'Cadastro',
       'aba' => 'cadastro',
       'erro' => $erro
     ];
-    
+
     View::getInstance()->mostrar('form_cadastro', $dados);
   }
 

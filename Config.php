@@ -5,7 +5,7 @@
 class Config{
   private static $configs = [
     //Básico
-    'titulo_site' => 'Título do site',
+    'titulo_site' => 'L2Site - O melhor servidor de Lineage 2 da atualidade',
 
     //MySQL
     'database_servidor' => 'localhost', //Endereço do servidor MySQL

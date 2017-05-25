@@ -32,7 +32,7 @@
       </tbody>
     </table>
   </article>
-  <article class="col-xs-12 col-sm-6 col-md-4">
+  <article class="col-xs-12 col-sm-6 col-md-4 text-center">
     <div class="page-header">
       <h2 class="texto-cor-principal">Itens</h3>
     </div>
@@ -50,7 +50,7 @@
       <span class="small">Armas | Sets | Jóias</span>
     </div>
   </article>
-  <article class="col-xs-12 col-sm-6 col-md-4">
+  <article class="col-xs-12 col-sm-6 col-md-4 text-right">
     <div class="page-header">
       <h2 class="texto-cor-principal">Features</h3>
     </div>

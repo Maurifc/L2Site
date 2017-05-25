@@ -6,7 +6,7 @@
     </div>
     <p>Olá <span class="texto-cor-principal"><?=$_SESSION['usuario'] ?></span>, seja bem vindo ao painel de controle do nosso servidor!</p>
 
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4 col-md-4">
       <div class="page-header">
         <h3 class="texto-cor-principal">Alterar Senha</h3>
       </div>
@@ -25,7 +25,7 @@
         <input class="btn btn-default pull-right" type="submit" value="Trocar" disabled>
       </form>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-md-offset-4">
       <div class="page-header">
         <h3 class="texto-cor-principal">
           Meus chars <small><?=count($dados['chars'])?>/7</small>
