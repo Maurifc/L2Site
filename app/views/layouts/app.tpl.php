@@ -14,10 +14,11 @@
 </head>
 <body>
   <div class="container wraper-geral">
+    <header>
     <!-- Logotipo -->
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4">
-        <img src="../../assets/imgs/logo.png" alt="logotipo" class="img-responsive">
+        <img class="logo" src="../../assets/imgs/logo.png" alt="logotipo" class="img-responsive">
       </div>
     </div>
     <!-- /.Logtipo -->
@@ -55,13 +56,16 @@
       </div>
     </nav>
     <!-- /.Navbar -->
+    </header>
 
     <!-- Conteúdo -->
+    <section>
     <div class="panel panel-default preto-transparente">
       <div class="panel-body">
         <?php include($caminhoViewInterna) ?>
       </div>
     </div>
+    </section>
     <!-- /.Conteúdo -->
 
     <!-- Footer

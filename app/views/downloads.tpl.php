@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-4">
+  <article class="col-xs-12 col-sm-4">
     <div class="page-header">
       <h3 class="texto-cor-principal">Cliente Interlude</h3>
     </div>
@@ -12,9 +12,9 @@
       <span class="texto-primario"><a href="#">Torrent</a></span>
       <span class="small">Use o uTorrent ou similar para baixar</span>
     </div>
+  </article>
 
-  </div>
-  <div class="col-xs-12 col-sm-4">
+  <article class="col-xs-12 col-sm-4">
     <div class="page-header">
       <h3 class="texto-cor-principal">Patch</h3>
     </div>
@@ -27,9 +27,9 @@
       <span class="texto-primario"><a href="#">Patch L2Site - Versão 1.0 (Zip)</a></span>
       <span class="small">Liberado dia 08/05/17</span>
     </div>
+  </article>
 
-  </div>
-  <div class="col-xs-12 col-sm-4">
+  <article class="col-xs-12 col-sm-4">
     <div class="page-header">
       <h3 class="texto-cor-principal">Utilitários</h3>
     </div>
@@ -45,5 +45,5 @@
       <span class="texto-primario"><a href="#">uTorrent</a></span>
       <span class="small">Cliente torrent</span>
     </div>
-  </div>
+  </article>
 </div> <!-- /.Row -->

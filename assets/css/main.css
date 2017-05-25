@@ -21,6 +21,10 @@ th{
   border: none;
 }
 
+.logo{
+  width: 320px;
+  height: auto;
+}
 /*
 | Navbar
 */

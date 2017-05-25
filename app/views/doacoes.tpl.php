@@ -1,21 +1,22 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-7">
+  <article class="col-xs-12 col-sm-7">
     <div class="page-header">
       <h2 class="texto-cor-principal">Porque precisamos de doações?</h3>
     </div>
 
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-  <div class="col-xs-12 col-sm-5">
+  </article>
+
+  <article class="col-xs-12 col-sm-5">
     <div class="page-header">
       <h2 class="text-right texto-cor-principal">O que ganho em troca?</h3>
     </div>
 
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
+  </article>
 </div> <!-- /.Row -->
 <div class="row">
-  <div class="col-xs-10 col-xs-offset-1">
+  <article class="col-xs-10 col-xs-offset-1">
     <div class="page-header text-center">
       <h2 class="texto-cor-principal">Tabela de recompensa</h3>
     </div>
@@ -45,7 +46,7 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </article>
     </div>
     <div class="row">
       <div class="col-xs-4 col-xs-offset-4 text-center">

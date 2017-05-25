@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12">
     <!-- Carousel -->
-    <div class="col-xs-12 col-sm-8">
+    <article class="col-xs-12 col-sm-8">
       <div id="carousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -35,11 +35,11 @@
           </div>
         </div>
       </div>
-    </div>
+  </article>
     <!-- /.Carousel -->
 
     <!-- Redes sociais -->
-    <div class="col-xs-12 col-sm-4">
+    <article class="col-xs-12 col-sm-4">
       <div class="page-header">
         <h3 class="texto-cor-principal">Encontre-nos nas redes sociais</h3>
       </div>
@@ -49,11 +49,11 @@
       <p><i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
         <a href="#">@l2Site</a>
       </p>
-    </div>
+    </article>
     <!-- /.Redes sociais -->
 
     <!-- Login no Painel  -->
-    <div class="col-xs-12 col-md-4">
+    <article class="col-xs-12 col-md-4">
       <div class="page-header">
         <h3 class="texto-cor-principal">Painel de controle</h3>
       </div>
@@ -75,7 +75,7 @@
         <a class="btn btn-primario btn-lg text-center" href="/index.php?r=painel">Acessar</a>
         <a class="btn btn-primario btn-lg text-center" href="/index.php?r=account&a=logout">Sair</a>
       <?php } ?>
-    </div>
+    </article>
     <!-- /.Login no Painel -->
 
   </div> <!-- Col -->
@@ -83,17 +83,17 @@
 
 <div class="row">
   <!-- Bem vindo -->
-  <div class="col-xs-12 col-sm-6">
+  <article class="col-xs-12 col-sm-6">
     <div class="page-header">
       <h2 class="texto-cor-principal">Seja bem vindo</h2>
     </div>
 
     <p>&nbspQuisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.</p>
-  </div>
+  </article>
   <!-- /.Bem vindo -->
 
   <!-- Rates -->
-  <div class="col-xs-12 col-sm-6">
+  <article class="col-xs-12 col-sm-6">
     <div class="row">
       <div class="page-header">
         <h2 class="texto-cor-principal">Rates</h2>
@@ -119,7 +119,6 @@
       </div>
     </div>
 
-  </div>
+  </article>
   <!-- /.Rates -->
-
 </div>

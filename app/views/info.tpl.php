@@ -1,5 +1,4 @@
-<!--<div class="row"> -->
-  <div class="col-xs-12 col-sm-6 col-md-4">
+  <article class="col-xs-12 col-sm-6 col-md-4">
     <div class="page-header">
       <h2 class="texto-cor-principal">Rates</h3>
     </div>
@@ -32,8 +31,8 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4">
+  </article>
+  <article class="col-xs-12 col-sm-6 col-md-4">
     <div class="page-header">
       <h2 class="texto-cor-principal">Itens</h3>
     </div>
@@ -50,8 +49,8 @@
       <span class="texto-primario texto-cor-principal">Titanium</span>
       <span class="small">Armas | Sets | Jóias</span>
     </div>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-4">
+  </article>
+  <article class="col-xs-12 col-sm-6 col-md-4">
     <div class="page-header">
       <h2 class="texto-cor-principal">Features</h3>
     </div>
@@ -74,7 +73,7 @@
       </span>
       <span class="small">Ketra Orc | Varkas | Monastery</span>
     </div>
-  </div>
+  </article>
 <!--</div> --> <!-- /.Row -->
 <div class="row">
   <div class="col-xs-4 col-xs-offset-4 text-center">
