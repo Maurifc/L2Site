@@ -8,6 +8,24 @@
 
     <div class="col-xs-12 col-sm-4 col-md-4">
       <div class="page-header">
+        <h3 class="texto-cor-principal">Meu perfil</h3>
+      </div>
+      <div>
+        <span class="texto-primario">Nome: </span>
+        <span><?=$dados['nome'] ?></span>
+      </div>
+      <div>
+        <span class="texto-primario">Nick: </span>
+        <span><?=$dados['nick'] ?></span>
+      </div>
+      <div>
+        <span class="texto-primario">E-mail: </span>
+        <span><?=$dados['email'] ?></span>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="page-header">
         <h3 class="texto-cor-principal">Alterar Senha</h3>
       </div>
       <form action="/index.php?r=painel&a=alterarSenha" method="post">
@@ -25,7 +43,8 @@
         <input class="btn btn-default pull-right" type="submit" value="Trocar" disabled>
       </form>
     </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-md-offset-4">
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="page-header">
         <h3 class="texto-cor-principal">
           Meus chars <small><?=count($dados['chars'])?>/7</small>
@@ -39,7 +58,6 @@
               <th>Classe</th>
               <th>PVP</th>
               <th>PK</th>
-              <th>Jail?</th>
               <th>Level</th>
             </tr>
           </thead>
@@ -50,13 +68,6 @@
                 <td><?=$char->classe ?></td>
                 <td><?=$char->pvpkills ?></td>
                 <td><?=$char->pkkills ?></td>
-                <td>
-                  <?php if($char->accesslevel == -1){
-                    echo 'Sim';
-                  } else {
-                   echo 'Não';
-                 }?>
-                </td>
                 <td><?=$char->level ?></td>
               </tr>
             <?php } ?>

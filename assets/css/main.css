@@ -3,7 +3,9 @@ body, html{
 }
 
 body{
-  background-image: url('../../assets/imgs/background.jpg');
+  background-image: url('../../assets/imgs/background.png');
+  background-repeat: no-repeat;
+  background-color: #000;
   font-family: 'Taviraj', serif;
 }
 
@@ -22,8 +24,12 @@ th{
 }
 
 .logo{
-  width: 320px;
-  height: auto;
+  width: 40%;
+}
+
+.block-center-align{
+  margin-left: auto;
+  margin-right: auto;
 }
 /*
 | Navbar
@@ -90,9 +96,9 @@ th{
 /*
 | Row
 */
-.row {
-  margin-bottom: 40px;
-  padding-bottom: 10px
+.row:not(#row-footer){
+  margin-bottom: 5%;
+  padding-bottom: 2%;
 }
 
 /*
@@ -171,30 +177,21 @@ th{
 .btn-primario:active{
   background-color: #ff8c21;
 }
-/*
-.wraper-geral{
-position: relative;
-min-height: 100%;
-}
 
 .footer{
 margin-top: 100px;
-height: 70px;
-padding: 10px;
-background-color: #000;
-color: white;
-position: absolute;
-bottom: 0;
+margin-bottom: 1px;
+height: 30%;
+padding: 10px 15px;
+background: rgba(185, 110, 35, 0.9);
+border-radius: 5px;
+color: #fff;
 }
 
-.footer-logo{
-margin-left: auto;
-margin-right: auto;
-min-width: 30px;
-max-width: 5%;
-height: auto;
+.texto-footer{
+  margin-top: 2%;
 }
-*/
+
 .panel p {
   font-size: 1.2em;
 }

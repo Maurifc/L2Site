@@ -19,9 +19,15 @@ class PainelController
       $charModel = new Char();
       $chars = $charModel->getChars(Auth::usuario());
 
+      //Carrega as informações da conta
+      $conta = Account::get(Auth::usuario());
+
       //Exibe o painel depois que o usuário está autenticado
       $dados = [
         'titulo' => 'Painel de controle',
+        'nome' => $conta->nome,
+        'nick' => $conta->login,
+        'email' =>  $conta->email,
         'chars' => $chars
       ];
 

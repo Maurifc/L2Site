@@ -1,6 +1,6 @@
 <div class="col-xs-12">
   <div class="page-header">
-    <h3>Cadastro efetuado com sucesso</h2>
+    <h3 class="texto-cor-principal">Cadastro efetuado com sucesso</h3>
   </div>
 </div>
 <div class="row">

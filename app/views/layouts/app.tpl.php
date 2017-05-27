@@ -13,17 +13,15 @@
   <link href="../../assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container wraper-geral">
+  <div class="container">
     <header>
     <!-- Logotipo -->
     <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <img class="logo" src="../../assets/imgs/logo.png" alt="logotipo" class="img-responsive">
-      </div>
+        <img src="../../assets/imgs/logo.png" alt="logotipo" class="img-responsive logo block-center-align">
     </div>
     <!-- /.Logtipo -->
 
-    <!-- Navbar -->
+    <!-- Navbar -->    
     <nav class="navbar navbar-inverse preto-transparente">
       <div class="container-fluid">
       <div class="navbar-header">
@@ -68,25 +66,17 @@
     </section>
     <!-- /.Conteúdo -->
 
-    <!-- Footer
-     <div class="footer">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <img class="footer-logo" src="../../assets/imgs/logo_bootstrap.png">
-        </div>
-        <div class="col-xs-12 col-sm-6 text-right">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <p>Powered by Bootstrap, MySQL and PHP</p>
-        </div>
-        <div class="col-sm-6 text-right">
-          <p>Copyright L2Site - 2017</p>
-        </div>
-      </div>
-      </div>
-    <!-- /.Footer -->
+    <div class="footer">
+     <div id="row-footer" class="row">
+       <div class="col-xs-12 col-sm-6 texto-footer">
+         <p>Powered by Bootstrap, MySQL and PHP</p>
+       </div>
+       <div class="col-xs-12 col-sm-6 texto-footer text-right">
+         <p>Copyright L2Site - 2017</p>
+       </div>
+     </div>
+     </div>
+
   </div> <!-- /.Container -->
 
   <!-- JavaScript -->

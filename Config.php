@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 | Arquivo de configuração
 */
@@ -10,8 +10,8 @@ class Config{
     //MySQL
     'database_servidor' => 'localhost', //Endereço do servidor MySQL
     'database_usuario' => 'root',
-    'database_senha' => 'root',
-    'database_nome' => 'l2java',
+    'database_senha' => '',
+    'database_nome' => 'l2jdream',
 
     //Colunas da tabela 'characters'
     'access_level' => 'accesslevel',
