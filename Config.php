@@ -13,7 +13,10 @@ class Config{
     'database_senha' => 'root',
     'database_nome' => 'l2java',
 
-    //Outros
+    //Colunas da tabela 'characters'
+    'access_level' => 'accesslevel',
+
+    //Layout Padrão - Não altere sem saber o que está fazendo
     'layout_padrao' => 'layouts/app.tpl.php'
   ];
 

@@ -3,6 +3,7 @@ namespace app\models;
 use libs\Funcoes;
 use libs\DbConnector;
 use libs\Auth;
+use \Config;
 use \PDO;
 
 /**
@@ -10,9 +11,11 @@ use \PDO;
 */
 class Char extends Model
 {
+  private $coluna_access_level;
 
   public function __construct(){
     parent::__construct();
+    $this->coluna_access_level = Config::get('access_level');
   }
 
   /*
@@ -21,11 +24,11 @@ class Char extends Model
   public function getChars($login){
 
     $query = $this->pdo->prepare("SELECT
-                ch.char_name,
-                ch.pvpkills,
-                ch.pkkills,
-                ch.accesslevel,
-                ch.level,
+                char_name,
+                pvpkills,
+                pkkills,
+                :access_level,
+                level,
                   (
                     SELECT
                       cl.class_name
@@ -41,6 +44,7 @@ class Char extends Model
     ");
 
     $query->bindParam(':login', $login);
+    $query->bindParam(':access_level', $this->coluna_access_level);
     $query->execute();
     $chars = $query->fetchAll(\PDO::FETCH_OBJ);
 
