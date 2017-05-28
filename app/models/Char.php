@@ -11,11 +11,9 @@ use \PDO;
 */
 class Char extends Model
 {
-  private $coluna_access_level;
 
   public function __construct(){
     parent::__construct();
-    $this->coluna_access_level = Config::get('access_level');
   }
 
   /*
@@ -27,7 +25,6 @@ class Char extends Model
                 char_name,
                 pvpkills,
                 pkkills,
-                :access_level,
                 level,
                   (
                     SELECT
@@ -44,7 +41,6 @@ class Char extends Model
     ");
 
     $query->bindParam(':login', $login);
-    $query->bindParam(':access_level', $this->coluna_access_level);
     $query->execute();
     $chars = $query->fetchAll(\PDO::FETCH_OBJ);
 

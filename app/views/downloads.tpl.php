@@ -29,7 +29,7 @@
     </div>
   </article>
 
-  <article class="col-xs-12 col-sm-4 text-right">
+  <article class="col-xs-12 col-sm-4">
     <div class="page-header">
       <h3 class="texto-cor-principal">Utilitários</h3>
     </div>

@@ -21,7 +21,7 @@
     </div>
     <!-- /.Logtipo -->
 
-    <!-- Navbar -->    
+    <!-- Navbar -->
     <nav class="navbar navbar-inverse preto-transparente">
       <div class="container-fluid">
       <div class="navbar-header">
@@ -67,15 +67,15 @@
     <!-- /.Conteúdo -->
 
     <div class="footer">
-     <div id="row-footer" class="row">
-       <div class="col-xs-12 col-sm-6 texto-footer">
-         <p>Powered by Bootstrap, MySQL and PHP</p>
-       </div>
-       <div class="col-xs-12 col-sm-6 texto-footer text-right">
-         <p>Copyright L2Site - 2017</p>
-       </div>
-     </div>
-     </div>
+      <div id="row-footer" class="row padding-footer">
+        <div class="col-xs-12 col-sm-4">
+            <span>Copyright L2Site - 2017</span>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
+          <span class="text-footer-right">Desenvolvido por M.F.C</span>
+        </div>
+      </div>
+    </div>
 
   </div> <!-- /.Container -->
 

@@ -1,6 +1,7 @@
 ﻿<?php
 /*
 | Arquivo de configuração
+| Não esqueça a vírgula no final de cada declaração
 */
 class Config{
   private static $configs = [
@@ -10,11 +11,8 @@ class Config{
     //MySQL
     'database_servidor' => 'localhost', //Endereço do servidor MySQL
     'database_usuario' => 'root',
-    'database_senha' => '',
-    'database_nome' => 'l2jdream',
-
-    //Colunas da tabela 'characters'
-    'access_level' => 'accesslevel',
+    'database_senha' => 'root',
+    'database_nome' => 'l2java',
 
     //Layout Padrão - Não altere sem saber o que está fazendo
     'layout_padrao' => 'layouts/app.tpl.php'
