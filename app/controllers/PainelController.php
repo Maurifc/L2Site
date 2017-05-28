@@ -45,11 +45,6 @@ class PainelController
         $senhaAtual = Funcoes::tString($_POST['senhaAtual']);
         $senhaNova = Funcoes::tString($_POST['senha']);
 
-/*
-        if($senhaNova != $senhaNovaRep){
-          throw new \Exception('Senhas não correspondem');
-        }*/
-
         $usuario = $_SESSION['usuario']; //Login do usuário
 
         //Pega a conta correspondente ao usuario no banco de dados
@@ -60,16 +55,12 @@ class PainelController
           throw new \Exception('Senhas atual incorreta');
         }
 
-        //Exibe pop up de sucesso
         $this->exibir(); //Exibe o painel de controle
         return true;
       } else {
         throw new \Exception('Erro ao tentar alterar a senha');
       }
     } catch (\Exception $e){
-      //Exibe popup de erro e redireciona para a home
-
-      echo $e;
       //header("Location: /index.php?r=home");
       return false;
     }

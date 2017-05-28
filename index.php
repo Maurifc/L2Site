@@ -3,7 +3,7 @@
 if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 
 //Debug
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 
 //Imports
 require_once('autoload.php');

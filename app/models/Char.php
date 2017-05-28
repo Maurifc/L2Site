@@ -11,9 +11,19 @@ use \PDO;
 */
 class Char extends Model
 {
+  private $tabela_classes; //Armazena o nome da tabela com a lista de classes
+  const TABELA_PACK = 'class_list';
+  const TABELA_INTERNA = 'site_class_list';
 
   public function __construct(){
     parent::__construct();
+
+    //Se estiver configurado para usar a tabela do pack...
+    if(Config::get('usar_tabela_do_pack')){
+      $this->tabela_classes = self::TABELA_PACK;
+    } else {
+      $this->tabela_classes = self::TABELA_INTERNA;
+    }
   }
 
   /*
@@ -30,7 +40,7 @@ class Char extends Model
                     SELECT
                       cl.class_name
                     FROM
-                      class_list cl
+                      ".$this->tabela_classes." cl
                     WHERE
                       cl.id = ch.base_class
                   ) as classe

@@ -14,6 +14,9 @@ class Config{
     'database_senha' => 'root',
     'database_nome' => 'l2java',
 
+    //Configuração da tabela 'class_list'
+    'usar_tabela_do_pack' => false,
+
     //Layout Padrão - Não altere sem saber o que está fazendo
     'layout_padrao' => 'layouts/app.tpl.php'
   ];

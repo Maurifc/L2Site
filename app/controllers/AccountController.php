@@ -21,7 +21,7 @@ class AccountController
       $conta = new Account();
       $conta->nome = $_POST['nomeCompleto'] ;
       $conta->login = $_POST['login'] ;
-      $conta->email = 'asda@asda.com';
+      $conta->email = $_POST['email'];
       $conta->password = $_POST['senha'];
 
       //Salva a conta no banco de dados
