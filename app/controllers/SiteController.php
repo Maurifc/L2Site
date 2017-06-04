@@ -9,6 +9,8 @@ use libs\View;
 use libs\Auth;
 
 class SiteController{
+  const ACTION_ERRO_LOGIN = 'erro_login';
+  const ACTION_ERRO_CADASTRO = 'erro_cadastro';
 
   //Exibe a página Home
   public function home(){
@@ -16,12 +18,12 @@ class SiteController{
     | A variável 'a' é setada quando o usuário entra com a senha
     | incorreta ao tentar se logar
     */
-    $erro_login = (isset($_GET['a'])) ? true : false;
+    $action = (isset($_GET['a'])) ? $_GET['a'] : null;
 
     $dados = [
       'titulo' => 'Home',
       'aba' => 'home',
-      'erro_login' => $erro_login
+      'erro_login' => $action == self::ACTION_ERRO_LOGIN
     ];
 
     View::getInstance()->mostrar('home', $dados);
@@ -32,11 +34,11 @@ class SiteController{
     /*
     | A variável 'a' é setada quando ocrre algum erro criar a conta
     */
-    $erro = (isset($_GET['a'])) ? true : false;
+    $action = (isset($_GET['a'])) ? $_GET['a'] : null;
     $dados = [
       'titulo' => 'Cadastro',
       'aba' => 'cadastro',
-      'erro' => $erro
+      'erro_cadastro' => $action == self::ACTION_ERRO_CADASTRO
     ];
 
     View::getInstance()->mostrar('form_cadastro', $dados);

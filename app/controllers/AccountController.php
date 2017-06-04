@@ -27,7 +27,7 @@ class AccountController
       //Salva a conta no banco de dados
       $conta->salvar();
 
-      //Mostra mensagem de sucesso
+      //Mostra view com a mensagem de sucesso
       $dados = [
         'titulo' => 'Cadastro efetuado com sucesso',
         'aba' => 'cadastro',
@@ -37,7 +37,7 @@ class AccountController
       View::getInstance()->mostrar('cadastro_sucesso', $dados);
     } catch (Exception $e){
       //Mostra mensagem de falha
-      header("Location: /index.php?r=cadastro&a=erro");
+      header("Location: /index.php?r=cadastro&a=".SiteController::ACTION_ERRO_CADASTRO);
     }
 
   }
@@ -55,7 +55,6 @@ class AccountController
 
         //Verifica se as credenciais são válidas
         if(!Auth::login($usuario, $senha)){
-          //Mostra o erro de credenciais inválidas em AJAX
           throw new Exception("Erro no login");
         }
       }
@@ -64,7 +63,7 @@ class AccountController
       header('Location: index.php?r=painel');
       return true;
     } catch (Exception $e){
-      header('Location: index.php?r=home&a=erroLogin');
+      header('Location: index.php?r=home&a='.SiteController::ACTION_ERRO_LOGIN);
       return false;
     }
 

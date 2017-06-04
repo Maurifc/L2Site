@@ -33,7 +33,7 @@
           <input type="checkbox" required>Estou de acordo com as <a href="/index.php?r=regras" target="_blank">regras do servidor</a>
         </label>
       </div>
-      <?php if(isset($dados['erro']) && $dados['erro'] === true) { ?>
+      <?php if($dados['erro_cadastro'] == true) { ?>
         <p class="text-danger" style="font-size: 1.3em">*Erro ao
            criar a conta. Verifique os campos digitados e tente   novamente!
         </p>
