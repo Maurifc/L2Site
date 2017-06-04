@@ -38,7 +38,14 @@
         <div class="form-group">
           <input class="form-control" type="password" name="repSenha" placeholder="Repetir nova senha" oninput="validarSenha('painel')" required>
           <p id="msg-erro-rep-senha" class="text-danger"></p>
+          <?php if($dados['erro_trocar_senha'] === true){ ?>
+            <span class="text-danger texto-primario">*Erro ao realizar a troca da senha</span>
+          <?php } ?>
+          <?php if($dados['sucesso_trocar_senha'] === true){ ?>
+            <span class="text-success texto-cor-principal texto-primario">Sua senha foi alterada com sucesso!</span>
+          <?php } ?>
         </div>
+
 
         <input class="btn btn-default pull-right" type="submit" value="Trocar" disabled>
       </form>

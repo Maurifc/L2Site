@@ -63,7 +63,6 @@ class AccountController
       //Se está autenticado, redireciona para o painel
       header('Location: index.php?r=painel');
       return true;
-
     } catch (Exception $e){
       header('Location: index.php?r=home&a=erroLogin');
       return false;

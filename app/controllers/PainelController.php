@@ -8,13 +8,18 @@ use libs\Auth;
 use libs\Funcoes;
 
 /**
- * Controla as funções do painel de controle
- */
+* Controla as funções do painel de controle
+*/
 class PainelController
 {
+  const ACTION_FALHA_TROCAR_SENHA = 'erro';
+  const ACTION_SUCESSO_TROCAR_SENHA = 'sucesso';
 
   public function exibir(){
     if(Auth::isAutenticado()){
+      //Verifica se algum parâmetro do tipo action foi enviado
+      $action = isset($_GET['a']) ? $_GET['a'] : null;
+
       //Carrega os chars do usuário
       $charModel = new Char();
       $chars = $charModel->getChars(Auth::usuario());
@@ -28,7 +33,9 @@ class PainelController
         'nome' => $conta->nome,
         'nick' => $conta->login,
         'email' =>  $conta->email,
-        'chars' => $chars
+        'chars' => $chars,
+        'erro_trocar_senha' => $action == self::ACTION_FALHA_TROCAR_SENHA,
+        'sucesso_trocar_senha' => $action == self::ACTION_SUCESSO_TROCAR_SENHA
       ];
 
       //Mostra o painel de controle, caso positivo
@@ -51,20 +58,18 @@ class PainelController
         $acc = Account::get($usuario);
 
         //Troca a senha dessa conta
-        if(!$acc->trocarSenha($senhaAtual, $senhaNova)){
-          throw new \Exception('Senhas atual incorreta');
-        }
+        $acc->trocarSenha($senhaAtual, $senhaNova);
 
-        $this->exibir(); //Exibe o painel de controle
+        //Se ocorrer a troca de senha...
+        //Redireciona para o painel, mostrando a mensagem de sucesso
+        header("Location: /index.php?r=painel&a=".self::ACTION_SUCESSO_TROCAR_SENHA);
         return true;
       } else {
-        throw new \Exception('Erro ao tentar alterar a senha');
+        throw new \Exception('Você não possui permissão para realizar a troca da senha no momento');
       }
     } catch (\Exception $e){
-      //header("Location: /index.php?r=home");
+      header("Location: /index.php?r=painel&a=".self::ACTION_FALHA_TROCAR_SENHA);
       return false;
     }
   }
-
-
 }

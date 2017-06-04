@@ -43,9 +43,15 @@ class Account extends Model
       $query->bindParam(':login', $this->login);
       $query->execute();
 
-      return ($query->rowCount()) ? true : false;
+      //Se conseguiu concluir a troca de senha...
+      if($query->rowCount()){
+        return true;
+      } else {
+        throw new \Exception();
+      }
+
     } else {
-      return false;
+      throw new \Exception('Senhas atual incorreta');
     }
   }
 
