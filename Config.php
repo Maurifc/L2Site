@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 | Arquivo de configuração
 | Não esqueça a vírgula no final de cada declaração
@@ -25,10 +25,20 @@ class Config{
     | Configurações de Ranking
     */
     //Máximo de chars exibidos no Top PVP/PK
-    'max_top_pvp_pk' => 20,
+    'max_top_pvp_pk' => 10,
 
+    /*
+    | Debug
+    */
+    //Ative para ver os erros diretamente no navegador, desative quando estiver online
+    'debug_ativado' => true,
+
+    /*
+    | Layout
+    */
     //Layout Padrão - Não altere sem saber o que está fazendo
     'layout_padrao' => 'layouts/app.tpl.php'
+
   ];
 
   public static function get($key){

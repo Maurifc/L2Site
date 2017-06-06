@@ -2,15 +2,17 @@
 //Inicia a sessão
 if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 
-//Debug
-//ini_set('display_errors', 1);
-
 //Imports
 require_once('autoload.php');
 use app\controllers\SiteController;
 use app\controllers\AccountController;
 use app\controllers\PainelController;
 use app\controllers\ValidacaoController;
+
+//Verifica se o modo debug foi ativado nas configurações
+if(Config::get('debug_ativado') == true){
+  ini_set('display_errors', 1);
+}
 
 $rota = isset($_GET['r']) ? $_GET['r'] : null;
 $action = isset($_GET['a']) ? $_GET['a'] : null;
