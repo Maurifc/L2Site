@@ -38,6 +38,15 @@ switch ($rota) {
   case 'regras':
     $site->regras();
     break;
+  case 'toppvp':
+    $site->topPvp();
+    break;
+  case 'toppk':
+    $site->topPk();
+    break;
+  case 'heros':
+    $site->heros();
+    break;
 
   //Rotas de Cadastro e Login
   case 'account':
