@@ -109,10 +109,13 @@ class SiteController{
 
   //Exibe a página Heroes
   public function heroes(){
+    $heroes = Char::getHeroes();
+
     $dados = [
-      'titulo' => 'Top PVP'
+      'titulo' => 'Heroes',
+      'heroes' => $heroes
     ];
 
-    View::getInstance()->mostrar('toppvp', $dados);
+    View::getInstance()->mostrar('heroes', $dados);
   }
 }

@@ -51,7 +51,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ranking <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Heroes</a></li>
+              <li><a href="/index.php?r=heroes">Heroes</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="/index.php?r=toppvp">Top PVP</a></li>
               <li><a href="/index.php?r=toppk">Top PK</a></li>

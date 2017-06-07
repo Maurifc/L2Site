@@ -9,7 +9,7 @@ class Config{
     'titulo_site' => 'L2Site - O melhor servidor de Lineage 2 da atualidade',
 
     /*
-    | MySQL
+    | MySQL e tabelas do banco
     */
     //Endereço do servidor MySQL
     'database_servidor' => 'localhost',
@@ -20,6 +20,11 @@ class Config{
     //Configuração da tabela 'class_list'
     //Mude para true caso seu pack não possua uma tabela class_list (incompatibilidades podem ocorrer)
     'usar_tabela_class_do_pack' => false,
+
+    //Nome da coluna que possui o ID do char (na tabela characters)
+    'coluna_idChar_tabela_characters' => 'obj_Id',
+    //Nome da coluna que possui o ID do char (na tabela heroes)
+    'coluna_idChar_tabela_heroes' => 'charId',
 
     /*
     | Configurações de Ranking

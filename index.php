@@ -46,8 +46,8 @@ switch ($rota) {
   case 'toppk':
     $site->topPk();
     break;
-  case 'heros':
-    $site->heros();
+  case 'heroes':
+    $site->heroes();
     break;
 
   //Rotas de Cadastro e Login

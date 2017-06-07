@@ -13,7 +13,6 @@ class Char extends Model
 {
   private $tabela_classes; //Armazena o nome da tabela com a lista de classes
 
-
   public function __construct(){
     parent::__construct();
   }
@@ -98,6 +97,32 @@ class Char extends Model
     return $chars;
   }
 
+  //Retorna os characters heroes
+  public static function getHeroes(){
+    $sql = self::getSelectSql();
+    //Verificamos o nome da coluna que contém o id do char em ambas tabelas
+    $colIdChar = Config::get('coluna_idChar_tabela_characters');
+    $colIdCharHeroes = Config::get('coluna_idChar_tabela_heroes');
+
+    $sql .= "INNER JOIN
+              heroes
+              ON
+              heroes.".$colIdCharHeroes." = ch.".$colIdChar;
+
+    $pdo = \libs\DbConnector::getConn();
+    $query = $pdo->prepare($sql);
+
+    $query->execute();
+    $chars = $query->fetchAll(\PDO::FETCH_OBJ);
+
+    //Retirando prefixos
+    foreach ($chars as $char) {
+      self::retirarPrefixos($char);
+    }
+    
+    return $chars;
+  }
+
   /*
   | Retorna a SQL usada para consulta de chars no banco de dados
   | Se o parâmetro $usarTabelaInterna for igual a true, a busca das classes dos chars
@@ -109,10 +134,10 @@ class Char extends Model
     $tabela = (Config::get('usar_tabela_class_do_pack')) ? 'class_list' : 'site_class_list' ;
 
     $sql= "SELECT
-                char_name,
-                pvpkills,
-                pkkills,
-                level,
+                ch.char_name,
+                ch.pvpkills,
+                ch.pkkills,
+                ch.level,
                   (
                     SELECT
                       cl.class_name
@@ -130,7 +155,7 @@ class Char extends Model
                       clan.clan_id = ch.clanid
                   ) as clan
                 FROM
-                characters ch";
+                characters ch ";
 
     return $sql;
   }

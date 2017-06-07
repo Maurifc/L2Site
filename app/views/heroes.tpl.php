@@ -3,34 +3,26 @@
     <div class="page-header">
         <h2 class="texto-cor-principal text-center"><?=$dados['titulo']?></h2>
     </div>
+  </div>
+  <div class="col-xs-8 col-xs-offset-2">
     <table id="tabela-top" class="table table-hover">
       <thead>
         <tr>
-          <th>#</th>
-          <th><?=$dados['tipo']?></th>
           <th>Nick</th>
           <th>Classe</th>
           <th>Clan</th>
         </tr>
       </thead>
       <tbody>
-          <?php foreach($dados['chars'] as $key=>$char) {?>
+          <?php foreach($dados['heroes'] as $key=>$hero) {?>
           <tr>
-            <!-- Posição do player no ranking -->
-            <td><?=$key+1 ?></td>
-            <!-- Quantidade de PVPs ou PKs -->
-              <?php if($dados['tipo'] == 'PVPs'){ ?>
-                <td><?=$char->pvpkills?></td>
-              <?php } else { ?>
-                <td><?=$char->pkkills?></td>
-              <?php } ?>
             <!-- Nome do char -->
-            <td><?=$char->char_name ?></td>
+            <td><?=$hero->char_name ?></td>
             <!-- Classe -->
-            <td><?=$char->classe ?></td>
+            <td><?=$hero->classe ?></td>
             <!-- Clan (se possuir) -->
-            <?php if($char->clan != '') {?>
-              <td><?=$char->clan ?></td>
+            <?php if($hero->clan != '') {?>
+              <td><?=$hero->clan ?></td>
             <?php } else {?>
               <td>-Nenhum-</td>
             <?php } ?>
@@ -38,5 +30,6 @@
           <?php } ?>
       </tbody>
     </table>
+    </div>
   </div>
 </div> <!-- /.Row -->
