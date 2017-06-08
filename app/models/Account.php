@@ -2,7 +2,6 @@
 namespace app\models;
 use libs\Funcoes;
 use libs\DbConnector;
-use libs\Auth;
 use \PDO;
 
 /**

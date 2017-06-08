@@ -32,6 +32,7 @@ class SiteController{
 
   //Exibe a página Cadastro
   public function cadastro(){
+  $_SESSION['erros_login']++;
     /*
     | A variável 'a' é setada quando ocrre algum erro criar a conta
     */

@@ -2,7 +2,6 @@
 namespace app\models;
 use libs\Funcoes;
 use libs\DbConnector;
-use libs\Auth;
 use \Config;
 use \PDO;
 
@@ -11,8 +10,6 @@ use \PDO;
 */
 class Char extends Model
 {
-  private $tabela_classes; //Armazena o nome da tabela com a lista de classes
-
   public function __construct(){
     parent::__construct();
   }
@@ -107,7 +104,8 @@ class Char extends Model
     $sql .= "INNER JOIN
               heroes
               ON
-              heroes.".$colIdCharHeroes." = ch.".$colIdChar;
+              heroes.".$colIdCharHeroes." = ch.".$colIdChar.
+              " ORDER BY ch.char_name";
 
     $pdo = \libs\DbConnector::getConn();
     $query = $pdo->prepare($sql);
@@ -119,7 +117,7 @@ class Char extends Model
     foreach ($chars as $char) {
       self::retirarPrefixos($char);
     }
-    
+
     return $chars;
   }
 
