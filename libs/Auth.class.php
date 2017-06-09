@@ -13,8 +13,9 @@ class Auth
   | caso eles se correspondam
   */
   public static function login($usuario, $senha){
-    //Verifica se o IP do usuário não está bloqueado
-    if(AntiBruteforce::loginBloqueado($usuario)){
+    //Verifica se o Login/IP do usuário não está bloqueado (a menos de uma hora)
+    $ip = $_SERVER['REMOTE_ADDR'];
+    if(AntiBruteforce::usuarioBloqueado($usuario, $ip)){
       return false;
     }
 

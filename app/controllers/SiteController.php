@@ -32,7 +32,8 @@ class SiteController{
 
   //Exibe a página Cadastro
   public function cadastro(){
-  $_SESSION['erros_login']++;
+    // \libs\AntiBruteforce::addFalha('admin');
+    \libs\AntiBruteforce::limparFalhas('admin');
     /*
     | A variável 'a' é setada quando ocrre algum erro criar a conta
     */
