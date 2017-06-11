@@ -48,6 +48,15 @@
             <a href="/index.php?r=downloads">Downloads</a></li>
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'doacoes') echo 'class="active"' ?>>
             <a href="/index.php?r=doacoes">Doações</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ranking <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Heroes</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/index.php?r=toppvp">Top PVP</a></li>
+              <li><a href="/index.php?r=toppk">Top PK</a></li>
+            </ul>
+          </li>
           <li class="hidden-sm"><a href="#">Fórum</a></li>
         </ul>
       </div>

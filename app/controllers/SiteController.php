@@ -7,6 +7,7 @@ namespace app\controllers;
 use Config;
 use libs\View;
 use libs\Auth;
+use \app\models\Char;
 
 class SiteController{
   const ACTION_ERRO_LOGIN = 'erro_login';
@@ -79,5 +80,39 @@ class SiteController{
     ];
 
     View::getInstance()->mostrar('regras', $dados);
+  }
+
+  //Exibe a página TopPVP
+  public function topPvp(){
+    $toppvp = Char::getTopPvp();
+
+    $dados = [
+      'titulo' => 'Top PVP',
+      'chars' => $toppvp,
+      'tipo' => 'PVPs'
+    ];
+
+    View::getInstance()->mostrar('toppvppk', $dados);
+  }
+  //Exibe a página TopPVP
+  public function topPk(){
+    $topPk = Char::getTopPk();
+
+    $dados = [
+      'titulo' => 'Top PK',
+      'chars' => $topPk,
+      'tipo' => 'PKs'
+    ];
+
+    View::getInstance()->mostrar('toppvppk', $dados);
+  }
+
+  //Exibe a página Heroes
+  public function heroes(){
+    $dados = [
+      'titulo' => 'Top PVP'
+    ];
+
+    View::getInstance()->mostrar('toppvp', $dados);
   }
 }

@@ -72,6 +72,19 @@ th{
   background: rgb(255, 166, 77);
 }
 
+.dropdown-menu{
+  font-size: 1.8rem;
+  background: rgba(255, 166, 77, 0.8);
+}
+
+.dropdown-menu > li > a{
+  color: white;
+}
+
+.dropdown-menu > li > a:hover{
+  background: #fff;
+  transition: 1s background;
+}
 /*
 | Carousel
 */
@@ -130,9 +143,9 @@ th{
 
 .table-hover>tbody>tr:hover {
   background-color: rgba(255, 153, 51, 0.2);
-  transition: background-color 0.3s;
+  color: #e27100;
+  transition: background-color 0.4s;
 }
-
 /*
 | Custom
 */
