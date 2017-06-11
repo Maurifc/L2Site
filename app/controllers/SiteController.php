@@ -33,7 +33,9 @@ class SiteController{
   //Exibe a página Cadastro
   public function cadastro(){
     // \libs\AntiBruteforce::addFalha('admin');
-    \libs\AntiBruteforce::limparFalhas('admin');
+    // \libs\AntiBruteforce::limparFalhas('admin');
+    \libs\AntiBruteforce::bloquear('admin');
+  
     /*
     | A variável 'a' é setada quando ocrre algum erro criar a conta
     */

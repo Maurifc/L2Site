@@ -60,27 +60,30 @@ class AntiBf extends Model
     $ins->bindParam(':ip', $ip);
     $ins->bindParam(':login', $usuario);
     $ins->bindParam(':hora', $horaBloqueio);//Hora atual
-
     $obj = $ins->execute();
-    return ($obj) ? $obj : false;
+    return $obj;
   }
 
   //Atualiza a hora que o usuário foi bloqueado (Quando ele insiste com o login errado);
-  public static function atualizarHoraBloqueio($id){
+  public static function atualizarHoraBloqueio($login, $ip){
+    $horaAtual = \libs\Funcoes::getDateTimeMySql();
     $sql = "UPDATE
               anti_bruteforce
             SET
               horaBloqueio = :hora
             WHERE
-              id = :id";
+              login = :login
+            AND
+              ip = :ip";
 
     $pdo = DbConnector::getConn();
     $upd = $pdo->prepare($sql);
-    $upd->bindParam(':hora', \libs\Funcoes::getDateTimeMySql());
-    $upd->bindParam(':id', $id);
-    $obj->execute();
+    $upd->bindParam(':hora', $horaAtual);
+    $upd->bindParam(':login', $login);
+    $upd->bindParam(':ip', $ip);
+    $obj = $upd->execute();
 
-    return ($obj) ? $obj : false;
+    return $obj;
   }
 
   /*
@@ -88,14 +91,12 @@ class AntiBf extends Model
   */
   private static function getSelectSql($usarTabelaInterna = true){
 
-    $sql= "SELECT
+    return "SELECT
                 id,
                 ip,
                 login,
                 horaBloqueio
                 FROM
                 anti_bruteforce ";
-
-    return $sql;
   }
 }

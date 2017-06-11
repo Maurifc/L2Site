@@ -29,7 +29,6 @@ class AntiBruteforce
       }
     }
 
-
     return true;
   }
 
@@ -44,9 +43,19 @@ class AntiBruteforce
     return true;
   }
 
-  //Retorna true se o usuário não está bloqueado
+  //Retorna true se o usuário está bloqueado (a menos de uma hora)
   public static function usuarioBloqueado($login, $ip){
-    return AntiBf::getBloqueado($login, $ip);
+    //Verifica se o usuário e IP estão no banco de dados
+    if($usuario = AntiBf::getBloqueado($login, $ip)){
+      //Caso positivo, verifica se já se passou 1 hora desde o bloqueio
+      $horaAtual = new \DateTime();
+      $diferenca = $horaAtual->diff(new \DateTime($usuario->horaBloqueio));
+
+      return ($diferenca->d < 1 && $diferenca->h < 1);
+    } else {
+      //Se ele não está no banco...
+      return false;
+    }
   }
 
   //Retorna a quantidade de falhas no login do usuario informado
@@ -66,7 +75,7 @@ class AntiBruteforce
     } else {
       AntiBf::bloquear($login, $ipUsuario);
     }
-
   }
+
 
 }

@@ -19,7 +19,7 @@ class Funcoes
 
   //Retorna a hora atual no formato DateTime do MYSQL
   public static function getDateTimeMySql(){
-    return date( 'Y-m-d H:i:s');
+    return date('Y-m-d H:i:s');
   }
-  
+
 }
