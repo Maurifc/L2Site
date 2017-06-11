@@ -13,11 +13,11 @@
         <input class="form-control input-lg" type="text" name="nomeCompleto" placeholder="Nome completo" required>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="text" name="login" placeholder="Login" onfocusout="validar(this, $('#msg-erro-login'))" required>
+        <input class="form-control input-lg" type="text" name="login" placeholder="Login" oninput="validar(this, $('#msg-erro-login'))" required>
         <p id="msg-erro-login" class="text-danger"></p>
       </div>
       <div class="form-group">
-        <input class="form-control input-lg" type="email" name="email" placeholder="E-mail" onfocusout="validar(this, $('#msg-erro-email'))" required>
+        <input class="form-control input-lg" type="email" name="email" placeholder="E-mail" oninput="validar(this, $('#msg-erro-email'))" required>
         <p id="msg-erro-email" class="text-danger"></p>
       </div>
       <div class="form-group">
