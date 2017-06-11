@@ -11,7 +11,7 @@ class Model
 
   function __construct()
   {
-    //Reliza a conexão com o banco de dados
+    //Realiza a conexão com o banco de dados
     $this->pdo = DbConnector::getConn();
   }
 }

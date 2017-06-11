@@ -10,7 +10,9 @@ use libs\Auth;
 use \app\models\Char;
 
 class SiteController{
-  const ACTION_ERRO_LOGIN = 'erro_login';
+  const ACTION_ERRO_LOGIN_INCORRETO = 'erro_login_incorreto';
+  const ACTION_ERRO_LOGIN_BLOQUEADO = 'erro_login_bloqueado';
+  const ACTION_ERRO_LOGIN_GENERICO = 'erro_login';
   const ACTION_ERRO_CADASTRO = 'erro_cadastro';
 
   //Exibe a página Home
@@ -24,8 +26,24 @@ class SiteController{
     $dados = [
       'titulo' => 'Home',
       'aba' => 'home',
-      'erro_login' => $action == self::ACTION_ERRO_LOGIN
+      'msg_erro' => "",
+      'erro_login' => $action != null
     ];
+
+    switch ($action) {
+      case self::ACTION_ERRO_LOGIN_INCORRETO:
+        $dados['msg_erro'] = "Login ou senha incorretos!";
+        break;
+
+      case self::ACTION_ERRO_LOGIN_BLOQUEADO:
+        $dados['msg_erro'] = "Login bloqueado nesse IP por 1 Hora";
+        break;
+
+      //Mensagem generica de erro
+      default:
+      $dados['msg_erro'] = "Tente novamente mais tarde";
+      break;
+    }
 
     View::getInstance()->mostrar('home', $dados);
   }

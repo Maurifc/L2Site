@@ -10,6 +10,8 @@
         <tr>
           <th>Nick</th>
           <th>Classe</th>
+          <th>PVPs</th>
+          <th>PKs</th>
           <th>Clan</th>
         </tr>
       </thead>
@@ -20,6 +22,9 @@
             <td><?=$hero->char_name ?></td>
             <!-- Classe -->
             <td><?=$hero->classe ?></td>
+            <!-- Quantidade de PVPs e PKs -->
+            <td><?=$hero->pvpkills?></td>
+            <td><?=$hero->pkkills?></td>
             <!-- Clan (se possuir) -->
             <?php if($hero->clan != '') {?>
               <td><?=$hero->clan ?></td>
@@ -31,5 +36,4 @@
       </tbody>
     </table>
     </div>
-  </div>
 </div> <!-- /.Row -->

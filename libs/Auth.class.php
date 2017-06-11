@@ -1,6 +1,8 @@
 <?php
 namespace libs;
 use \PDO;
+use libs\Exceptions\LoginIncorretoException;
+use libs\Exceptions\LoginBloqueadoException;
 /**
  * Classe responsável por efetuar Login e Logoff de usuários
  * No banco de dados MySQL
@@ -13,24 +15,35 @@ class Auth
   | caso eles se correspondam
   */
   public static function login($usuario, $senha){
-      $senhaCriptografada = base64_encode(pack("H*",
-                                          sha1(utf8_encode($senha))));
-      //Pega a conexão e monta a query de busca
-      $pdo = DbConnector::getConn();
-      $sql = $pdo->prepare("SELECT * FROM accounts WHERE login= :login AND password= :senha");
-      $sql->bindParam(':login', $usuario);
-      $sql->bindParam(':senha', $senhaCriptografada);
+    //Verifica se o Login/IP do usuário não está bloqueado (a menos de uma hora)
+    $ip = $_SERVER['REMOTE_ADDR'];
+    if(AntiBruteforce::usuarioBloqueado($usuario, $ip)){
+      throw new LoginBloqueadoException();
+    }
 
-      //Executa a query
-      $sql->execute();
+    $senhaCriptografada = base64_encode(pack("H*",
+                                        sha1(utf8_encode($senha))));
+    //Pega a conexão e monta a query de busca
+    $pdo = DbConnector::getConn();
+    $sql = $pdo->prepare("SELECT * FROM accounts WHERE login= :login AND password= :senha");
+    $sql->bindParam(':login', $usuario);
+    $sql->bindParam(':senha', $senhaCriptografada);
 
-      //Se voltou algum resultado, então loga o usuário
-      if($sql->fetch(PDO::FETCH_ASSOC)){
-        $_SESSION['usuario'] = $usuario;
-        return true;
-      }
+    //Executa a query
+    $sql->execute();
 
-    return false;
+    //Se encontrou a combinação, então loga o usuário
+    if($sql->fetch(PDO::FETCH_ASSOC)){
+      $_SESSION['usuario'] = $usuario;
+      AntiBruteforce::limparFalhas($usuario);
+      return true;
+    } else {
+      //Se a credencial estiver incorreta
+      AntiBruteforce::addFalha($usuario);
+      throw new LoginIncorretoException();
+    }
+
+    // return false;
   }
 
   public static function logout(){
