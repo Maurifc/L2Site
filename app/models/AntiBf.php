@@ -21,7 +21,9 @@ class AntiBf extends Model
     $sql .= "WHERE
               login = :login
             AND
-              ip = :ip";
+              ip = :ip
+            AND
+              horaBloqueio > NOW() - INTERVAL 1 HOUR";
 
     $pdo = DbConnector::getConn();
     $query = $pdo->prepare($sql);
