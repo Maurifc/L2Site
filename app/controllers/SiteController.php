@@ -31,7 +31,7 @@ class SiteController{
   }
 
   //Exibe a página Cadastro
-  public function cadastro(){
+  public function cadastro(){    
     /*
     | A variável 'a' é setada quando ocrre algum erro criar a conta
     */
