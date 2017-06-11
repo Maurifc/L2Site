@@ -17,7 +17,9 @@
     <header>
     <!-- Logotipo -->
     <div class="row">
+      <a href="/index.php?r=home">
         <img src="../../assets/imgs/logo.png" alt="logotipo" class="img-responsive logo block-center-align">
+      </a>
     </div>
     <!-- /.Logtipo -->
 
@@ -33,21 +35,28 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="navbar-brand visible-xs" href="#"><?=$dados['titulo']?></span>
+        <span class="navbar-brand visible-xs visible-sm" href="#"><?=$dados['titulo']?></span>
       </div>
 
       <div class="collapse navbar-collapse" id="nav1">
         <ul class="nav navbar-nav">
+          <!-- Home -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'home') echo 'class="active"' ?>>
-                  <a href="/index.php?r=home">Home</a></li>
+            <a href="/index.php?r=home">Home</a>
+          </li>
+          <!-- Cadastro -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'cadastro') echo 'class="active"' ?>>
-            <a href="/index.php?r=cadastro">Cadastro</a></li>
+            <a href="/index.php?r=cadastro">Cadastro</a>
+          </li>
+          <!-- Informações -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'info') echo 'class="active"' ?>>
-            <a href="/index.php?r=info">Informações</a></li>
+            <a href="/index.php?r=info">Informações</a>
+          </li>
+          <!-- Downloads -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'downloads') echo 'class="active"' ?>>
-            <a href="/index.php?r=downloads">Downloads</a></li>
-          <li <?php if(isset($dados['aba']) && $dados['aba'] === 'doacoes') echo 'class="active"' ?>>
-            <a href="/index.php?r=doacoes">Doações</a></li>
+            <a href="/index.php?r=downloads">Downloads</a>
+          </li>
+          <!-- Ranking -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ranking <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -57,7 +66,12 @@
               <li><a href="/index.php?r=toppk">Top PK</a></li>
             </ul>
           </li>
-          <li class="hidden-sm"><a href="#">Fórum</a></li>
+          <!-- Doações -->
+          <li <?php if(isset($dados['aba']) && $dados['aba'] === 'doacoes') echo 'class="active"' ?>>
+            <a href="/index.php?r=doacoes">Doações</a>
+          </li>
+          <!-- Fórum -->
+          <li><a href="#">Fórum</a></li>
         </ul>
       </div>
       </div>
