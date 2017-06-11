@@ -67,7 +67,7 @@
             <input type="password" class="form-control" name="password" placeholder="Senha">
         </div>
         <?php if($dados['erro_login'] == true) {?>
-          <span class="text-danger">* Login ou senha incorreto(s). Tente novamente!</span>
+          <span class="text-danger">* Falha: <?=$dados['msg_erro']?></span>
         <?php } ?>
         <input class="btn btn-default pull-right"type="submit" name="btnSubmit" value="Login">
       </form>

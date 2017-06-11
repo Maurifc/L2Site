@@ -63,7 +63,7 @@ class AccountController
       header('Location: index.php?r=painel');
       return true;
     } catch (Exception $e){
-      header('Location: index.php?r=home&a='.SiteController::ACTION_ERRO_LOGIN);
+      header('Location: index.php?r=home&a='.SiteController::ACTION_ERRO_LOGIN_INCORRETO);
       return false;
     }
 
