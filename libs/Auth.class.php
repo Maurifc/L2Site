@@ -1,6 +1,8 @@
 <?php
 namespace libs;
 use \PDO;
+use libs\Exceptions\LoginIncorretoException;
+use libs\Exceptions\LoginBloqueadoException;
 /**
  * Classe responsável por efetuar Login e Logoff de usuários
  * No banco de dados MySQL
@@ -16,7 +18,7 @@ class Auth
     //Verifica se o Login/IP do usuário não está bloqueado (a menos de uma hora)
     $ip = $_SERVER['REMOTE_ADDR'];
     if(AntiBruteforce::usuarioBloqueado($usuario, $ip)){
-      return false;
+      throw new LoginBloqueadoException();
     }
 
     $senhaCriptografada = base64_encode(pack("H*",
@@ -36,10 +38,12 @@ class Auth
       AntiBruteforce::limparFalhas($usuario);
       return true;
     } else {
+      //Se a credencial estiver incorreta
       AntiBruteforce::addFalha($usuario);
+      throw new LoginIncorretoException();
     }
 
-    return false;
+    // return false;
   }
 
   public static function logout(){

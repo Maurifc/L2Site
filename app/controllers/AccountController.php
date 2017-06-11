@@ -4,6 +4,8 @@ use app\models\Account;
 use libs\View;
 use libs\Funcoes;
 use libs\Auth;
+use libs\Exceptions\LoginIncorretoException;
+use libs\Exceptions\LoginBloqueadoException;
 use \Exception;
 
 /**
@@ -53,17 +55,23 @@ class AccountController
         $usuario = Funcoes::tString($_POST['login']);
         $senha = Funcoes::tString($_POST['password']);
 
-        //Verifica se as credenciais são válidas
-        if(!Auth::login($usuario, $senha)){
-          throw new Exception("Erro no login");
-        }
+        //Tenta logar o usuário se as credenciais são válidas
+        Auth::login($usuario, $senha);
       }
 
       //Se está autenticado, redireciona para o painel
       header('Location: index.php?r=painel');
       return true;
-    } catch (Exception $e){
+
+    //Verifica se ocorreu algum erro no login...
+    } catch (LoginIncorretoException $e){
       header('Location: index.php?r=home&a='.SiteController::ACTION_ERRO_LOGIN_INCORRETO);
+      return false;
+    } catch (LoginBloqueadoException $e){
+      header('Location: index.php?r=home&a='.SiteController::ACTION_ERRO_LOGIN_BLOQUEADO);
+      return false;
+    } catch (Exception $e){
+      header('Location: index.php?r=home&a='.SiteController::ACTION_ERRO_LOGIN_GENERICO);
       return false;
     }
 
