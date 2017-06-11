@@ -16,6 +16,7 @@ class PainelController
   const ACTION_SUCESSO_TROCAR_SENHA = 'sucesso';
 
   public function exibir(){
+    //Verifica se o usuário já está autenticado
     if(Auth::isAutenticado()){
       //Verifica se algum parâmetro do tipo action foi enviado
       $action = isset($_GET['a']) ? $_GET['a'] : null;
@@ -27,12 +28,12 @@ class PainelController
       //Carrega as informações da conta
       $conta = Account::get(Auth::usuario());
 
-      //Exibe o painel depois que o usuário está autenticado
+      //Dados para a view
       $dados = [
         'titulo' => 'Painel de controle',
-        'nome' => $conta->nome,
+        'nome' => isset($conta->nome) ? $conta->nome : 'Nenhum',
         'nick' => $conta->login,
-        'email' =>  $conta->email,
+        'email' => isset($conta->email) ? $conta->email : 'Nenhum',
         'chars' => $chars,
         'erro_trocar_senha' => $action == self::ACTION_FALHA_TROCAR_SENHA,
         'sucesso_trocar_senha' => $action == self::ACTION_SUCESSO_TROCAR_SENHA
