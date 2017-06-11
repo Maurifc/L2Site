@@ -1,4 +1,4 @@
 Se você ainda não usa o site, rode somente o arquivo 'instalacao_completa.sql' no seu banco de dados.
 
-Se você já possui a versão 1.0 instalada no seu banco de dados,
-rode somente o arquivo 'update_para_1.1.sql'.
+Se você já possui alguma versão instalada no seu banco de dados,
+rode somente o arquivo 'update_para_1.2.sql'.
