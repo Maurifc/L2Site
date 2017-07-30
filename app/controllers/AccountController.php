@@ -39,7 +39,7 @@ class AccountController
       View::getInstance()->mostrar('cadastro_sucesso', $dados);
     } catch (Exception $e){
       //Mostra mensagem de falha
-      header("Location: /index.php?r=cadastro&a=".SiteController::ACTION_ERRO_CADASTRO);
+      header("Location: index.php?r=cadastro&a=".SiteController::ACTION_ERRO_CADASTRO);
     }
 
   }
@@ -83,7 +83,7 @@ class AccountController
 
     //Carrega a página inicial do site
     $site = new SiteController();
-    header('Location: /index.php?r=home');
+    header('Location: index.php?r=home');
 
     return true;
   }

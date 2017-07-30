@@ -10,7 +10,7 @@
 </div> <!-- /.Row -->
 <div class="row">
   <div class="col-xs-12 text-center">
-    <a class="btn btn-primario btn-eg" href="/index.php?r=downloads">
+    <a class="btn btn-primario btn-eg" href="index.php?r=downloads">
       Ir para downloads
     </a>
   </div>

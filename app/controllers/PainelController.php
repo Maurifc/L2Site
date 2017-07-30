@@ -42,7 +42,7 @@ class PainelController
       //Mostra o painel de controle, caso positivo
       View::getInstance()->mostrar('painel_controle', $dados);
     } else {
-      header("Location: /index.php?r=home");
+      header("Location: index.php?r=home");
     }
   }
 
@@ -63,13 +63,13 @@ class PainelController
 
         //Se ocorrer a troca de senha...
         //Redireciona para o painel, mostrando a mensagem de sucesso
-        header("Location: /index.php?r=painel&a=".self::ACTION_SUCESSO_TROCAR_SENHA);
+        header("Location: index.php?r=painel&a=".self::ACTION_SUCESSO_TROCAR_SENHA);
         return true;
       } else {
         throw new \Exception('Você não possui permissão para realizar a troca da senha no momento');
       }
     } catch (\Exception $e){
-      header("Location: /index.php?r=painel&a=".self::ACTION_FALHA_TROCAR_SENHA);
+      header("Location: index.php?r=painel&a=".self::ACTION_FALHA_TROCAR_SENHA);
       return false;
     }
   }

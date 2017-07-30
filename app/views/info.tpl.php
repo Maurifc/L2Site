@@ -79,5 +79,5 @@
       </div><!-- /.Row -->
 
       <div class="row text-center">
-        <a href="/index.php?r=cadastro"class="btn btn-eg btn-primario">Jogue Agora</a>
+        <a href="index.php?r=cadastro"class="btn btn-eg btn-primario">Jogue Agora</a>
       </div>

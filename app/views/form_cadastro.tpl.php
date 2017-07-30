@@ -8,7 +8,7 @@
 </div> <!-- /.Row -->
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-    <form class="form form-default" action="/index.php?r=account&a=salvarconta" method="post">
+    <form class="form form-default" action="index.php?r=account&a=salvarconta" method="post">
       <div class="form-group">
         <input class="form-control input-lg" type="text" name="nomeCompleto" placeholder="Nome completo" required>
       </div>
@@ -30,7 +30,7 @@
 
       <div class="checkbox">
         <label>
-          <input type="checkbox" required>Estou de acordo com as <a href="/index.php?r=regras" target="_blank">regras do servidor</a>
+          <input type="checkbox" required>Estou de acordo com as <a href="index.php?r=regras" target="_blank">regras do servidor</a>
         </label>
       </div>
       <?php if($dados['erro_cadastro'] == true) { ?>

@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="page-header">
-      <h2 class="texto-cor-principal">Painel de controle <a href="/index.php?r=account&a=logout"><small class="pull-right">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></small></a></h2>
+      <h2 class="texto-cor-principal">Painel de controle <a href="index.php?r=account&a=logout"><small class="pull-right">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></small></a></h2>
     </div>
     <p>Olá <span class="texto-cor-principal"><?=$_SESSION['usuario'] ?></span>, seja bem vindo ao painel de controle do nosso servidor!</p>
 
@@ -28,7 +28,7 @@
       <div class="page-header">
         <h3 class="texto-cor-principal">Alterar Senha</h3>
       </div>
-      <form action="/index.php?r=painel&a=alterarSenha" method="post">
+      <form action="index.php?r=painel&a=alterarSenha" method="post">
         <div class="form-group">
           <input class="form-control" type="password" name="senhaAtual" placeholder="Senha Atual" required>
         </div>

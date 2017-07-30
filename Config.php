@@ -11,11 +11,11 @@ class Config{
     /*
     | MySQL e tabelas do banco
     */
-    //Endereço do servidor MySQL
+    //Endereço do servidor MySQL do servidor
     'database_servidor' => 'localhost',
     'database_usuario' => 'root',
-    'database_senha' => 'root',
-    'database_nome' => 'l2java',
+    'database_senha' => '',
+    'database_nome' => 'l2site',
 
     //Configuração da tabela 'class_list'
     //Mude para true caso seu pack não possua uma tabela class_list (incompatibilidades podem ocorrer)

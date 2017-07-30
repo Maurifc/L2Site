@@ -13,21 +13,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="../../assets/imgs/home_carousel/img_01.jpg" alt="img">
+            <img src="assets/imgs/home_carousel/img_01.jpg" alt="img">
             <div class="carousel-caption">
               <h1>Título</h1>
               <p>Texto texto texto texto texto</p>
             </div>
           </div>
           <div class="item">
-            <img src="../../assets/imgs/home_carousel/img_02.jpg" alt="img">
+            <img src="assets/imgs/home_carousel/img_02.jpg" alt="img">
             <div class="carousel-caption">
               <h1>Titulo</h1>
               <p>Texto texto texto texto texto</p>
             </div>
           </div>
           <div class="item">
-            <img src="../../assets/imgs/home_carousel/img_03.jpg" alt="img">
+            <img src="assets/imgs/home_carousel/img_03.jpg" alt="img">
             <div class="carousel-caption">
               <h1>Titulo</h1>
               <p>Texto texto texto texto texto</p>
@@ -59,7 +59,7 @@
       </div>
 
       <?php if(!libs\Auth::isAutenticado()) {?>
-      <form action="/index.php?r=account&a=login" method="post">
+      <form action="index.php?r=account&a=login" method="post">
         <div class="form-group">
             <input type="text" class="form-control" name="login" placeholder="Login">
         </div>
@@ -72,8 +72,8 @@
         <input class="btn btn-default pull-right"type="submit" name="btnSubmit" value="Login">
       </form>
       <?php } else {?>
-        <a class="btn btn-primario btn-lg text-center" href="/index.php?r=painel">Acessar</a>
-        <a class="btn btn-primario btn-lg text-center" href="/index.php?r=account&a=logout">Sair</a>
+        <a class="btn btn-primario btn-lg text-center" href="index.php?r=painel">Acessar</a>
+        <a class="btn btn-primario btn-lg text-center" href="index.php?r=account&a=logout">Sair</a>
       <?php } ?>
     </article>
     <!-- /.Login no Painel -->
@@ -113,7 +113,7 @@
     </div>
     <div class="row">
       <div class="text-center">
-        <a class="btn btn-primario btn-lg" href="/index.php?r=info">
+        <a class="btn btn-primario btn-lg" href="index.php?r=info">
           Saiba mais
         </a>
       </div>

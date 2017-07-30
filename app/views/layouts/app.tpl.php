@@ -5,20 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=$dados['titulo']?> | <?=Config::get('titulo_site') ?></title>
-  <link rel="icon" type="image/png" href="../../assets/imgs/favicon.ico" />
+  <link rel="icon" type="image/png" href="assets/imgs/favicon.ico" />
   <!-- CSS -->
-  <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Taviraj:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
-  <link href="../../assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <header>
     <!-- Logotipo -->
     <div class="row">
-      <a href="/index.php?r=home">
-        <img src="../../assets/imgs/logo.png" alt="logotipo" class="img-responsive logo block-center-align">
+      <a href="index.php?r=home">
+        <img src="assets/imgs/logo.png" alt="logotipo" class="img-responsive logo block-center-align">
       </a>
     </div>
     <!-- /.Logtipo -->
@@ -42,33 +42,33 @@
         <ul class="nav navbar-nav">
           <!-- Home -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'home') echo 'class="active"' ?>>
-            <a href="/index.php?r=home">Home</a>
+            <a href="index.php?r=home">Home</a>
           </li>
           <!-- Cadastro -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'cadastro') echo 'class="active"' ?>>
-            <a href="/index.php?r=cadastro">Cadastro</a>
+            <a href="index.php?r=cadastro">Cadastro</a>
           </li>
           <!-- Informações -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'info') echo 'class="active"' ?>>
-            <a href="/index.php?r=info">Informações</a>
+            <a href="index.php?r=info">Informações</a>
           </li>
           <!-- Downloads -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'downloads') echo 'class="active"' ?>>
-            <a href="/index.php?r=downloads">Downloads</a>
+            <a href="index.php?r=downloads">Downloads</a>
           </li>
           <!-- Ranking -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ranking <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/index.php?r=heroes">Heroes</a></li>
+              <li><a href="index.php?r=heroes">Heroes</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="/index.php?r=toppvp">Top PVP</a></li>
-              <li><a href="/index.php?r=toppk">Top PK</a></li>
+              <li><a href="index.php?r=toppvp">Top PVP</a></li>
+              <li><a href="index.php?r=toppk">Top PK</a></li>
             </ul>
           </li>
           <!-- Doações -->
           <li <?php if(isset($dados['aba']) && $dados['aba'] === 'doacoes') echo 'class="active"' ?>>
-            <a href="/index.php?r=doacoes">Doações</a>
+            <a href="index.php?r=doacoes">Doações</a>
           </li>
           <!-- Fórum -->
           <li><a href="#">Fórum</a></li>
@@ -103,8 +103,8 @@
   </div> <!-- /.Container -->
 
   <!-- JavaScript -->
-  <script src="../../assets/js/jquery.min.js"></script>
-  <script src="../../assets/js/bootstrap.min.js"></script>
-  <script src="../../assets/js/main.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
